@@ -3,7 +3,7 @@
 # To run from python interpreter
 # > cd D:\dev\python\Python101\basics\StringDemo.py
 # > python
-# > exec(open('StringDemo.py').read())
+# > exec(open('ListDemo.py').read())
 #
 
 # List have no fixed type constraint
@@ -78,17 +78,38 @@ print('3rd element from 2nd list :', MultiDimensionalList[1][2])
 #Get all 3rd list elements
 print('3rd list elements :', MultiDimensionalList[2])
 
-# list comprehension expression
-#Give me row[1] for each row in matrix M, in a new list.
+
+
+# #### list comprehension expression ####
+M=[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# Suppose, for instance, that we need to extract the second column of our sample matrix. 
+# It’s easy to grab rows by simple indexing because the matrix is stored by rows, 
+# but it’s almost as easy to get a column with a list comprehension
+
+# List comprehensions (coded in square brackets) derive from set notation; 
+# they are a way to build a new list by running an expression on each item in a sequence, 
+# one at a time, from left to right.
+
+# List comprehensions are composed of an expression and a looping construct that share a variable name (row, here). 
+# The preceding list comprehension means basically what it says: "Give me row[1] for each row in matrix M, in a new list."
 # The result is a new list containing column 2 of the matrix.
 
-M=[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+# Give me row[1] for each row in matrix M, in a new list.
+# The result is a new list containing column 2 of the matrix.
 col2 = [row[1] for row in M] # Collect the items in column 2
-print('col2 :', col2)
+print('col2 :', col2) #  [2, 5, 8]
 
+# range: a built-in that generates successive integers
+print('list(range(4)) :', list(range(4)))  #  [0, 1, 2, 3]
 
-
-# range—a built-in that generates successive integers
-print('list(range(4)) :', list(range(4)))
 # from −6 to +6 by 2 
-print('list(range(-6, 7, 2)) :', list(range(-6, 7, 2)))
+print('list(range(-6, 7, 2)) :', list(range(-6, 7, 2)))  #  [-6, -4, -2, 0, 2, 4, 6]
+
+# Filter out odd items
+print('[row[1] for row in M if row[1] % 2 == 0] ::', [row[1] for row in M if row[1] % 2 == 0] )  # [2, 8]
+
+# Add 1 to each item in column 2
+print('[row[1] + 1 for row in M] ::', [row[1] + 1 for row in M] )  #[3, 6, 9]
+
+

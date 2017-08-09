@@ -1,0 +1,4 @@
+Python’s toolset is layered: 
+generic operations that span multiple types show up as built-in functions or expressions (e.g.,len(X), X[0]), 
+but type-specific operations are method calls (e.g., aString.upper()).
+(Page 103)
