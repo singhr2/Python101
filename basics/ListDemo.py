@@ -112,4 +112,15 @@ print('[row[1] for row in M if row[1] % 2 == 0] ::', [row[1] for row in M if row
 # Add 1 to each item in column 2
 print('[row[1] + 1 for row in M] ::', [row[1] + 1 for row in M] )  #[3, 6, 9]
 
+# Create a set of row sums
+print('M :', M)
+print('{sum(row) for row in M}', {sum(row) for row in M}) # Result not in same order as the list
+
+
+G = (sum(row) for row in M)
+print('type(G) :', type(G))
+print('G :', G)
+
+
+
 
