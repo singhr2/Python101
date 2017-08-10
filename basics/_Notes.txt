@@ -2,6 +2,13 @@ https://github.com/singhr2/Python101
 
 
 Python’s toolset is layered: 
-generic operations that span multiple types show up as built-in functions or expressions (e.g.,len(X), X[0]), 
-but type-specific operations are method calls (e.g., aString.upper()).
+GENERIC OPERATIONS that span multiple types show up as built-in functions or expressions (e.g.,len(X), X[0]), 
+but TYPE-SPECIFIC OPERATIONS are method calls (e.g., aString.upper()).
 (Page 103)
+
+
+In standard Python (a.k.a. CPython), the space is reclaimed immediately, as soon as the last reference to an object is removed.
+garbage collection cleans up unused memory as your program runs
+In Python, when we lose the last reference to the object—by assigning its variable to something else, for example
+—all of the memory space occupied by that object’s structure is automatically cleaned up for us:
+>>> rec = 0 # Now the object's space is reclaimed
