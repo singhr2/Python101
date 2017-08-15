@@ -1,7 +1,7 @@
 # ControlFlows.py
 
 # To run from python interpreter
-# > cd D:\dev\python\Python101\basics\StringDemo.py
+# > cd D:\dev\python\Python101\basics\
 # > python
 # > exec(open('ControlFlows.py').read())
 

@@ -100,6 +100,9 @@ else :
 	print('key exists, value :', nestedEmpRecord['garbage'])
 
 
+if not 'garbage' in nestedEmpRecord :
+	print(' >>> there is no key in dictionar with key as garbage')
+
 # ordering dictionaries using keys
 # OPTION -1 : get keys, create list, sort and get values for sorted keys
 print('nestedEmpRecord.keys() :', nestedEmpRecord.keys()) # dict_keys(['skillFamily', 'name', 'roles'])

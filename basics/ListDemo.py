@@ -13,6 +13,9 @@
 # They are also mutable—unlike strings, lists can be modified in place by assignment to
 #offsets as well as a variety of list method calls
 
+myEmptyList = []
+print('size of empty list :', len(myEmptyList))
+
 myList = ['one', 'two', 'three']
 print('myList :', myList)
 print('total elements :', len(myList))
