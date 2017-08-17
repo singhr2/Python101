@@ -1,3 +1,7 @@
+'''
+This files demos basic functions related to OS and Files
+'''
+
 import os
 
 print('Current Directory :', os.getcwd())

@@ -12,6 +12,14 @@
 > Dictionaries : are unordered bags of key-value pairs.
 """
 
+'''
+In Python, by contrast, variables are best
+thought of not as containers but as pointers. So in Python, when you
+write
+x = 4
+you are essentially defining a pointer named x that points to some
+other bucket containing the value 4.
+'''
 
 print('1) integer type')
 print(type(1)) #int
