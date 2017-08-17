@@ -22,6 +22,10 @@ if you use a tuple, it cannot.
 # D = {'id': 1, 'name': 'apple', 'price': 1.23}
 
 # Tuples (use () )
+myEmptyTuple=()
+print('myEmptyTuple:', myEmptyTuple)
+print('total elements in myEmptyTuple:', len(myEmptyTuple))
+
 myTuple1 = (1, 2, 3, 4)
 print('myTuple1:', myTuple1)
 
@@ -37,6 +41,9 @@ print('myTuple1.index(1) :', myTuple1.index(1));
 
 print('myTuple1.count(1) : ', myTuple1.count(1))
 
+#Without explicit assiging to (+=) myTuple1, the contents will nto change
+print('myTuple1 :::', myTuple1 +('temp1', 'temp2'))
+print('myTuple1', myTuple1)
 
 # Test for immutability of Tuples
 # uncomment below line and running will return error -> TypeError: 'tuple' object does not support item assignment
