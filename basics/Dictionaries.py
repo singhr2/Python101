@@ -26,6 +26,12 @@ D['quantity'] += 1
 print('<after> D :', D)
 
 
+###
+# To check what is dict()
+another_dict=dict()
+print(another_dict.items())
+print(another_dict.values())
+
 ####
 # Starting with empty dictionary
 Developer1 = {}
@@ -48,7 +54,8 @@ print('\nDeveloper3 :', Developer3) #  {'name': 'Shreya', 'job': 'student', 'age
 nestedEmpRecord = {
 		'skillFamily': 'java', #
 		'name': { 'lName': 'Singh', 'fName': 'Ranbir'},   # nested dict
-		'roles' : ['Developer', 'Designer', 'Architect'] # nested list
+		'roles' : ['Developer', 'Designer', 'Architect'], # nested list
+		'experience': 18
 	}	
 
 print('\n nestedEmpRecord :', nestedEmpRecord)
@@ -61,6 +68,18 @@ print('skillFamily :', nestedEmpRecord['skillFamily'])
 #Add another roles
 nestedEmpRecord['roles'].append('Consultant') # Add one more job desc
 print('nestedEmpRecord(after adding job) :', nestedEmpRecord)
+
+#Numeric operator on values
+print('experience :', nestedEmpRecord['experience'], ' Years')
+
+nestedEmpRecord['experience']+=82
+print('experience +82:', nestedEmpRecord['experience'], ' Years')
+print('\n nestedEmpRecord :', nestedEmpRecord)
+
+
+# Listing down objects created so far
+print('\n dir() :', dir())
+
 
 # fetching a nonexistent key will throw an error
 # UNCOMMENT below line to get #KeyError: 'garbage'
