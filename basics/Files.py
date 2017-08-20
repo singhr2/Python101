@@ -27,3 +27,18 @@ print(fileContents.split())
 
 # printing content using for loop
 for line in open('DummyFile.txt'): print(line)
+
+
+# binary files are useful for processing media, accessing data created by
+# C programs, and so on.
+# Python’s struct module can both create and unpack
+# packed binary data—raw bytes that record values that are not Python objects—to be
+# written to a file in binary mode.
+
+'''
+To access files containing non-ASCII Unicode text, we simply pass in an encoding name
+if the text in the file doesn’t match the default encoding for our platform.
+'''
+print('\n')
+file = open('DummyFile.txt', 'r', encoding='utf-8')
+print(file.readlines())
