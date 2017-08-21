@@ -15,13 +15,15 @@ If you pass a collection of objects around your program as a list, it can be cha
 if you use a tuple, it cannot.
 '''
 
-#List (uses [] )
+# >>> List (uses [] )
 # L = [1, 'apple', 1.23]
 
-# Dictionary (uses {} )
+# >>> Dictionary (uses {} )
 # D = {'id': 1, 'name': 'apple', 'price': 1.23}
 
-# Tuples (use () )
+# >>> Tuples (use () )
+# myTuple1 = (1, 2, 3, 4)
+
 myEmptyTuple=()
 print('myEmptyTuple:', myEmptyTuple)
 print('total elements in myEmptyTuple:', len(myEmptyTuple))
