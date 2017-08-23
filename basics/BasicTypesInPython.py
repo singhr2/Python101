@@ -177,8 +177,8 @@ print('bool(\'spam\'):', bool('spam')) # True
 
 #a special placeholder object called None commonly used to initialize names and objects
 someVariable = None
-print('someVariable :', someVariable)
-
+print('someVariable :', someVariable) #None
+print('type(someVariable) :', type(someVariable)) #<class 'NoneType'>
 
 # LIST
 print('\n 4) List')
