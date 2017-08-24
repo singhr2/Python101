@@ -1,5 +1,11 @@
 https://github.com/singhr2/Python101
 
+URL(s):
+* http://learning-python.readthedocs.io/en/latest/chapter03/README.html
+* https://docs.python.org/3/tutorial/classes.html
+* 
+
+
 >> How to clear python interpreter console
 import os
 os.system('cls')

@@ -8,6 +8,66 @@
 
 # http://www.diveintopython3.net/native-datatypes.html
 
+'''
+
+Built-in type		Example
+--------------		------------------------------------------
+None				None
+						A special object serves as an empty placeholder (much like a NULL pointer in C). 
+						it is returned from functions that don’t explicitly return anything.
+					
+Booleans			True,False
+						True and false are intrinsic properties of every object in Python, each object is either ture of false, as follows:
+
+						Numbers are false if zero, and true otherwise
+						Other objects are false if empty, and true otherwise
+						False:	None, ‘’, [], {}, 0, 0.0, (), set([])
+						True:	“something”, [1, 2], {‘eggs’: ‘spam’}, 1, 0.1, (3, 4), {5, 6}
+						
+Numbers				123,3.14,3+4j,0xef,Decimal,Fraction
+						Integer and float-point
+						Complex number
+						Decimal: fixed-precision
+						Fraction: rational number
+					
+Strings				‘spam’,”Bob’s”,b’ax01c’,u’spxc4m’
+
+Lists				[1,[2,’Three’],4.5], list(range(10)), list(‘spam’)
+						Ordered collections of arbitrary objects
+						Accessed by offset
+						Variable-length, heterogeneous, and arbitrarily nestable
+						Of the category “mutable sequence”
+						Arrays of object references
+						
+Tuples				(1,’spam’,4,’U’),tuple(‘spam’),namedtuple
+						Ordered collections of arbitrary objects
+						Accessed by offset
+						Of the category “immutable sequence”
+						Fixed-length, heterogeneous, and arbitrarily nestable
+						Arrays of object references
+						
+Dicts				 {}, {‘food’:’spam’,’taste’:’yum’},dict(hours=10)
+						Accessed by key, not offset position
+						Unordered collections of arbitrary objects
+						Variable-length, heterogeneous, and arbitrarily nestable
+						Of the category “mutable mapping”
+						Tables of object references (hash tables)
+						
+Sets				{1,’a’,’bc’},set(‘abc’)
+						Unordered collections of arbitrary objects
+						Accessed by iteration, membership test, not offset position
+						Variable-length, heterogeneous, and arbitrarily nestable
+						Of the category “mutable mapping”
+						Collections of object references
+						
+Files				open(‘eggs.txt’)
+functions			def,lambda
+modules				import,`__module__`
+classes				object,types,metaclasses
+
+Ref: http://learning-python.readthedocs.io/en/latest/chapter03/README.html
+'''
+
 """
 > Booleans : are either True or False.
 > Numbers : can be 
