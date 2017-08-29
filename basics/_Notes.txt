@@ -25,3 +25,4 @@ garbage collection cleans up unused memory as your program runs
 In Python, when we lose the last reference to the object—by assigning its variable to something else, for example
 —all of the memory space occupied by that object’s structure is automatically cleaned up for us:
 >>> rec = 0 # Now the object's space is reclaimed
+

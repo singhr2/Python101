@@ -9,6 +9,19 @@
 # http://www.diveintopython3.net/native-datatypes.html
 
 '''
+Numbers, strings, lists, dictionaries, tuples, files, and sets are generally considered to be the core object (data) types. 
+Types, None, and Booleans are sometimes classified this way as well. 
+There are multiple number types (integer, floating point, complex, fraction, and decimal) and 
+multiple string types (simple strings and Unicode strings in Python 2.X, and text strings and byte strings in Python 3.X).
+
+They are known as “core” types because they are part of the Python language itself and are always available;
+
+A “sequence” is a positionally ordered collection of objects. Strings, lists, and tuples are all sequences in Python. 
+They share common sequence operations, such as indexing, concatenation, and slicing, but also have type-specific method calls. 
+
+The term “mapping” denotes an object that maps keys to associated values.
+Python’s dictionary is the only mapping type in the core type set. 
+Mappings do not maintain any left-to-right positional ordering; they support access to data stored by key, plus type-specific method calls.
 
 Built-in type		Example
 --------------		------------------------------------------
@@ -89,7 +102,7 @@ Ref: http://learning-python.readthedocs.io/en/latest/chapter03/README.html
 A complete inventory of Python’s numeric toolbox includes:
 	• Integer and floating-point objects
 	• Complex number objects
-	• Decimal: fixed-precision objects
+	• Decimal: fixed-precision objects (decimals are like floating-point numbers, but they have a fixed number of decimal points. )
 	• Fraction: rational number objects
 	• Sets: collections with numeric operations
 	• Booleans: true and false
@@ -179,6 +192,14 @@ print('fraction1 :', fraction1) # 2/3
 fraction2 = Fraction(5, 3)
 print('fraction2 + Fraction(1, 2) :', fraction2 + Fraction(1, 2)) #13/6
 
+
+# Fraction objects can also be created from floating-point number strings
+f1 = Fraction('.25') # Fraction(1, 4)
+f2 = Fraction('1.25') # Fraction(5, 4)
+f_sum=Fraction('.25') + Fraction('1.25') # Fraction(3, 2)
+
+#
+Fraction.from_float(1.75) #Fraction(7, 4)
 
 # 
 whatTypeIsIt = 3.141
