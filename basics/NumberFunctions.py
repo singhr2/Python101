@@ -37,10 +37,10 @@ print('round(2.567, 2) :', round(2.567, 2)) # 2.57
 print('pow(2, 4) :', pow(2, 4)) #16
 print('2 ** 4 :', 2 ** 4) # 16
 
-print('abs(-42.0) :', abs(-42.0)) #
-print('sum((1, 2, 3, 4)) :', sum((1, 2, 3, 4))) #
-print('min(3, 1, 2, 4) :', min(3, 1, 2, 4)) #
-print('max(3, 1, 2, 4) :', max(3, 1, 2, 4)) #
+print('abs(-42.0) :', abs(-42.0)) # 42.0
+print('sum((1, 2, 3, 4)) :', sum((1, 2, 3, 4))) #10
+print('min(3, 1, 2, 4) :', min(3, 1, 2, 4)) #1
+print('max(3, 1, 2, 4) :', max(3, 1, 2, 4)) #4
 
 
 # when you hear “module,” think “import.”
@@ -66,7 +66,7 @@ import random
 # range(n) generates an iterator to progress the integer numbers starting with 0 and ending with (n -1)
 # range(begin,end) # increment of range() has been 1
 # range(begin,end, step) # step : increments, can be both negative and positive, but not zero
-for x in range(2,5) :
+for x in range(2,5) : # print 3 random numbers e.g., 0.84462438338923, 0.47778402135365905, 0.557122347748778
 	print('random[',x, '] =', random.random())
 
 print('~~~~~~~~~~~')
@@ -86,8 +86,8 @@ for y in range(1,9) :
 	print(random.choice(['Ranbir', 'Shreya', 'Anshi']))
 
 options=['one', 'two', 'threee']
-print('options :', options)
+print('options :', options) #  ['one', 'two', 'threee']
 random.shuffle(options)
-print('options :', options)
+print('options :', options) # ['one', 'two', 'threee']
 random.shuffle(options)
-print('options :', options)
+print('options :', options) #['threee', 'two', 'one']
