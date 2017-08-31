@@ -20,6 +20,22 @@ type(()) # <class 'tuple'>
 
 l1=['1','2']
 type(l1) # <class 'list'>
+print(l1, ' has ', len(l1), 'elements') # ['1', '2']  has  2 elements
+print('list.count(\'2\') :', l1.count('2')) # 1
+print('list.count(\'-999\') :', l1.count('-999')) # 0
+print('l1.index(\'2\') ?', l1.index('2')) # 1
+#print('l1.index(\'-999\') ?', l1.index('-999')) # ValueError: '-999' is not in list
+
+#Add element at end
+l1.append('3rd') # ['1', '2', '3rd']
+print(l1)
+
+#add element at index
+l1.insert(1, 'add at index 1') #['1', 'add at index 1', '2', '3rd']
+print(l1)
+
+l1.remove('add at index 1')
+print(l1)
 
 # ------------------------------------
 t1=('1','2') 
