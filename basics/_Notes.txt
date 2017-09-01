@@ -1,11 +1,11 @@
-https://github.com/singhr2/Python101
+﻿https://github.com/singhr2/Python101
 
 URL(s):
 * http://learning-python.readthedocs.io/en/latest/chapter03/README.html
 * https://docs.python.org/3/tutorial/classes.html
 * https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial
 * http://www.openbookproject.net/books/bpp4awd/index.html
-
+* https://www.tutorialspoint.com/python3/index.htm
 
 >> How to clear python interpreter console
 import os
