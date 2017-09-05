@@ -11,6 +11,7 @@ URL(s):
 import os
 os.system('cls')
 
+
 time and timeit modules for timing the speed of alternatives, and 
 the profile module for isolating bottlenecks.
 
@@ -19,10 +20,16 @@ GENERIC OPERATIONS that span multiple types show up as built-in functions or exp
 but TYPE-SPECIFIC OPERATIONS are method calls (e.g., aString.upper()).
 (Page 103)
 
-
 In standard Python (a.k.a. CPython), the space is reclaimed immediately, as soon as the last reference to an object is removed.
 garbage collection cleans up unused memory as your program runs
 In Python, when we lose the last reference to the object—by assigning its variable to something else, for example
 —all of the memory space occupied by that object’s structure is automatically cleaned up for us:
 >>> rec = 0 # Now the object's space is reclaimed
+
+
+if you need to do serious number crunching, an optional extension for Python called NumPy (Numeric Python) 
+provides advanced numeric programming tools, such as a matrix data type, vector processing, and sophisticated computation libraries. 
+Hardcore scientific programming groups at places like Los Alamos and NASA use Python with NumPy 
+to implement the sorts of tasks they previously coded in C++, FORTRAN, or Matlab.
+NumPy is currently an optional extension; it doesn’t come with Python and must be installed separately
 

@@ -10,6 +10,8 @@
 # python CollectionType.py
 
 
+#Python’s mutable types, including lists, dictionaries, and sets.
+
 # Set
 # an unordered collection of unique and immutable objects
 # sets are iterable, can grow and shrink on demand, and may contain a variety of object types.

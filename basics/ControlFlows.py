@@ -109,3 +109,15 @@ for i in [12, 16, 17, 24, 29, 30]:
     print(i)
 print("done")
 
+
+# Comprehensions
+M=[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+print('M :', M)
+
+col2 = [row[1] for row in M]
+print('col2 :', col2)
+
+print('after adding 1 to send element in each row :', [row[1] + 1 for row in M])
+
+print('Filter out odd items :', [row[1] for row in M if row[1] % 2 == 0])

@@ -9,6 +9,9 @@
 # http://www.diveintopython3.net/native-datatypes.html
 
 '''
+In Python, types are determined automatically at runtime, not in response to declarations in your code. 
+This means that you never declare variables ahead of time.
+
 Numbers, strings, lists, dictionaries, tuples, files, and sets are generally considered to be the core object (data) types. 
 Types, None, and Booleans are sometimes classified this way as well. 
 There are multiple number types (integer, floating point, complex, fraction, and decimal) and 
