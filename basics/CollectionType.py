@@ -2,7 +2,7 @@
 
 # To run from python interpreter
 # > cd D:\dev\python\Python101\basics\
-# [option-1]  
+# [option-1]
 # > python
 # > exec(open('CollectionType.py').read())
 # OR
@@ -32,7 +32,9 @@ print('list.count(\'-999\') :', myList1.count('-999')) # 0
 
 # index() : Raises a ValueError if there is no such item.
 print('myList1.index(\'2\') ?', myList1.index('2')) # 1
+print('Membership check:', '2' in myList1) # True
 #print('myList1.index(\'-999\') ?', myList1.index('-999')) # ValueError: '-999' is not in list
+
 
 #Add element at end
 myList1.append('3rd') # ['1', '2', '3rd']
@@ -43,21 +45,34 @@ desired_index= 1;
 myList1.insert(desired_index, 'add at index 1') #['1', 'add at index 1', '2', '3rd']
 print(myList1)
 
-# Removes the first item from the list that has a value of x. 
-#don't return it.
+
+# Removes the first item from the list that has a value of x.
+# *** don't return it. ***
 myList1.remove('add at index 1')
 print(myList1)
 
-# Removes the item at the given position in the list, and returns it. 
+print('\n -->>> Delete example')
+
+# Removes the item at the given position in the list, and returns it.
 #If no index is specified, pop() removes and returns the last item in the list.
 index_to_remove = 2;
 myList1.pop(index_to_remove)
 print('List after removing element at index (',index_to_remove,') :', myList1)
 
+## Remove using default
+sample_List = ['1','b',3,'d',5,'f']
+print('sample_List :', sample_List) # ['1', 'b', 3, 'd', 5, 'f']
+del sample_List[1]
+print('sample_List - after deleting element at index 1 :', sample_List) #['1', 3, 'd', 5, 'f']
+del sample_List[0:2]
+print('sample_List - after deleting element at index [0:2] :', sample_List) # ['d', 5, 'f']
+
 # remove all elements from list
 myList1.clear()
 print('List after removing all elements :', myList1)
 
+
+print('\n -->>>  Iterate through list')
 # Iterate through list
 myList1.append('temp1')
 myList1.append('temp2')
@@ -68,6 +83,8 @@ print(myList1)
 for i in myList1 :
 	print(i)
 
+
+
 # extend list
 list1 = ['physics', 'chemistry', 'maths']
 list2=list(range(5)) #creates list of numbers between 0-4
@@ -75,9 +92,17 @@ list1.extend(list2)
 print ('list1 :', list1)  # ['physics', 'chemistry', 'maths', 0, 1, 2, 3, 4]
 print ('list2 :', list2)  # [0, 1, 2, 3, 4]
 
+
+
 # reverse list
-list1.reverse()
-print ('list1 (after reverse) :', list1)
+return_var1 = list1.reverse()
+print ('list1 (after reverse) :', list1) # [4, 3, 2, 1, 0, 'maths', 'chemistry', 'physics']
+print ('return type :', type(return_var1)) #<class 'NoneType'>
+
+return_var2 = reversed(list1)
+print ('list1 (after reverse, using reversed) :', list1) # [4, 3, 2, 1, 0, 'maths', 'chemistry', 'physics']
+print ('return type :', type(return_var2)) #<class 'list_reverseiterator'>
+
 
 # SORTING LIST
 # sort(key=None(default), reverse=False(default))
@@ -96,13 +121,17 @@ a.sort(key=len, reverse=True)
 print(a) #['butterfly', 'wasp', 'bee', 'a']
 
 
+
+
+
+
 #
 S = {c * 4 for c in 'spam'}
 print(S) # {'pppp', 'ssss', 'aaaa', 'mmmm'}
 
 
 # ------------------------------------
-t1=('1','2') 
+t1=('1','2')
 type(t1) #<class 'tuple'>
 
 
@@ -112,8 +141,8 @@ type(t1) #<class 'tuple'>
 # SET
 # sets are essentially like valueless dictionaries
 # set’s items are unordered, unique, and immutable
-# 
-#largely because of their implementation, sets can only contain immutable (a.k.a. “hashable”) object types. 
+#
+#largely because of their implementation, sets can only contain immutable (a.k.a. “hashable”) object types.
 # Hence, lists and dictionaries cannot be embedded in sets, but tuples can if you need to store compound values.
 
 s2={'1','2'}
@@ -191,7 +220,3 @@ engineers > managers # Are all managers engineers? (superset)
 # ------------------------------------
 d2={'1':'one', '2':'two'}
 type(d2) #<class 'dict'>
-
-
-
-
