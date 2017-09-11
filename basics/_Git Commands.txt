@@ -1,0 +1,13 @@
+
+git status
+
+git add *.py
+git commit -m "added set example"
+git push
+
+git pull
+
+git gui
+
+gitk
+
