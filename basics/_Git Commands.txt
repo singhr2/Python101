@@ -1,4 +1,3 @@
-
 git status
 
 git add *.py
@@ -10,4 +9,3 @@ git pull
 git gui
 
 gitk
-
