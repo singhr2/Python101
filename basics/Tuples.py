@@ -104,3 +104,4 @@ tuple2 = (1,2,3,4,5)
 listFromTuple2 = [ n*10 for n in tuple2]
 print('listFromTuple2 :', listFromTuple2) #[10, 20, 30, 40, 50]
 
+#>>> from collections import namedtuple

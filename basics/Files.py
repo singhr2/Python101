@@ -9,9 +9,12 @@
 
 '''
 ! Must have exactly one of create/read/write/append mode and at most one plus
-> 'r' (read) : default processing mode
-> 'w' : write
+> r/w/a[b][+]
+> 'r' (read) : default processing mode. The file pointer is placed at the beginning of the file.
+> 'r+' : opens the file for both reading and writing.
+> 'w' : write , Overwrites the file if the file exists.
 > 'a' : 'a' to open for appending text to the end (e.g., for adding to logfiles).
+        The file pointer is at the end of the file if the file exists.
 > 'rb': Python 3.X bytes files (bytes strings)
 > Adding a + opens the file for both input and output (i.e., you can both read and
 write to the same file object,
@@ -48,7 +51,9 @@ for line in open('DummyFile.txt'): print(line)
 #if the text in the file doesn’t match the default encoding for our platform.
 print('\n')
 file = open('DummyFile.txt', 'r', encoding='utf-8')
-print(file.readlines())
+#file = open('DummyFile.txt', 'rb')
+
+print(' ^^^^ DummyFile.txt :', file.readlines())
 
 
 '''
@@ -91,7 +96,27 @@ for line in open('cls.py'):
 fileToRead.close()
 
 #  + Not working 
-fileToRead2 = open('DummyFile.txt', 'w+')
+fileToRead2 = open('DummyFile.txt', 'a+')
 fileToRead2.writelines('lineXyZ')
 fileToRead2.flush()
-print(fileToRead2.readlines())
+print('contents of fileToRead2 :', fileToRead2.readlines())
+
+
+print('Is file closed ?' , fileToRead2.closed)
+if not fileToRead2.closed  :
+        print(' File (', fileToRead2.name , ') is opened in (', fileToRead2.mode, ' ) mode.')
+
+print(' currently cursor is at ', fileToRead2.tell()  , 'position')
+fileToRead2.writelines('\n add one more line')
+fileToRead2.seek(5, 0)  # NOT WORKING
+print(' currently cursor is at ', fileToRead2.tell()  , 'position')
+
+'''
+seek(offset[, from]) method
+If from is set to 0, the beginning of the file is used as the reference position. 
+If it is set to 1, the current position is used as the reference position. 
+If it is set to 2 then the end of the file would be taken as the reference position.
+'''
+fileToRead2.writelines('\n added at position 5')
+
+
