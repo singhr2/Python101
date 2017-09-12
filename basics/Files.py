@@ -90,8 +90,8 @@ for line in open('cls.py'):
 #Manual close (done for you when file is collected)
 fileToRead.close()
 
-#  + Not working 
-fileToRead2 = open('DummyFile.txt', 'w+')
-fileToRead2.writelines('lineXyZ')
+#  + Not working
+fileToRead2 = open('SampleTextFile.txt', 'w+')
+fileToRead2.writelines('-----')
 fileToRead2.flush()
 print(fileToRead2.readlines())
