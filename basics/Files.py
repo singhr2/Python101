@@ -26,7 +26,7 @@ write to the same file object,
 
 
 print('opening file in \'w\' (write) mode')
-f = open('DummyFile.txt', 'w')  # 'w' = write-mode
+f = open('xDummyFile.txt', 'w')  # 'w' = write-mode
 f.write('This is 1st line without line break ')
 f.write('This is 2nd line with line break \n')
 f.write('This is last line')
@@ -34,7 +34,7 @@ f.write('This is last line')
 f.close()
 
 print('opening file in \'r\' (read) mode')
-f = open('DummyFile.txt', 'r') # 'r' = read-mode
+f = open('xDummyFile.txt', 'r') # 'r' = read-mode
 fileContents = f.read()
 print('fileContents :', fileContents)
 
@@ -42,12 +42,12 @@ print('splitting file contents ')
 print(fileContents.split())
 
 # printing content using for loop
-for line in open('DummyFile.txt'): print(line)
+for line in open('xDummyFile.txt'): print(line)
 
 #To access files containing non-ASCII Unicode text, we simply pass in an translation (a.k.a. encoding) name
 #if the text in the file doesn’t match the default encoding for our platform.
 print('\n')
-file = open('DummyFile.txt', 'r', encoding='utf-8')
+file = open('xDummyFile.txt', 'r', encoding='utf-8')
 print(file.readlines())
 
 
@@ -62,7 +62,7 @@ Or keep your backslashes by simply doubling them
     myfile = open('C:\\new\\text.dat', 'w')
 '''
 
-fileToRead = open('_Git Commands.txt', 'r')
+fileToRead = open('SampleTextFile.txt', 'r')
 print('\n >>> reading 6 chars [', fileToRead.read(6), ']')
 print() #Read up to next N characters (or bytes) into a string
 
@@ -81,7 +81,7 @@ print('\n >>> readlines() - ', fileToRead.readlines())  # Read entire file into 
 
 
 #use line File iterators read line by line
-for line in open('cls.py'):
+for line in open('SampleTextFile.txt'):
     print(line)
 
 #Flush output buffer to disk without closing
@@ -92,7 +92,7 @@ fileToRead.close()
 
 #  readline Not working
 print('>>>>>  <<<<<<<')
-fileToRead2 = open('SampleTextFile.txt', 'w+')
+fileToRead2 = open('xSampleTextFile.txt', 'w+')
 fileToRead2.write('A,B,C')  # writelines()
 fileToRead2.write('\n2,3,4')
 fileToRead2.flush()
@@ -101,7 +101,7 @@ print('line_read ?:', line_read) # read 1 line only
 
 fileToRead2.close()
 # readline() didn't worked, so close and open again
-fileToRead2 = open('SampleTextFile.txt', 'r')
+fileToRead2 = open('xSampleTextFile.txt', 'r')
 line_read = fileToRead2.readline()
 print('line_read >> :', line_read) # read 1 line only
 print('line.rstrip() :', line_read.rstrip())

@@ -100,3 +100,4 @@ ENV/
 # mypy
 .mypy_cache/
 basics/DummyFile.txt
+basics/xDummyFile.txt

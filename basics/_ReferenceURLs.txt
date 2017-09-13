@@ -1,6 +1,8 @@
-https://www.tutorialspoint.com/python/index.htm
-
+﻿https://github.com/singhr2/Python101
+https://www.tutorialspoint.com/python3/index.htm
 https://docs.python.org/3/tutorial/introduction.html
-
-
+http://learning-python.readthedocs.io/en/latest/chapter03/README.html
+https://docs.python.org/3/tutorial/classes.html
+https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial
+http://www.openbookproject.net/books/bpp4awd/index.html
 https://www.datacamp.com/courses/intro-to-python-for-data-science

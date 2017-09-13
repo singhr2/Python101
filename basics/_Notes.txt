@@ -1,22 +1,13 @@
-﻿https://github.com/singhr2/Python101
-
-URL(s):
-* http://learning-python.readthedocs.io/en/latest/chapter03/README.html
-* https://docs.python.org/3/tutorial/classes.html
-* https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial
-* http://www.openbookproject.net/books/bpp4awd/index.html
-* https://www.tutorialspoint.com/python3/index.htm
-
 >> How to clear python interpreter console
 import os
 os.system('cls')
 
 
-time and timeit modules for timing the speed of alternatives, and 
+time and timeit modules for timing the speed of alternatives, and
 the profile module for isolating bottlenecks.
 
-Python’s toolset is layered: 
-GENERIC OPERATIONS that span multiple types show up as built-in functions or expressions (e.g.,len(X), X[0]), 
+Python’s toolset is layered:
+GENERIC OPERATIONS that span multiple types show up as built-in functions or expressions (e.g.,len(X), X[0]),
 but TYPE-SPECIFIC OPERATIONS are method calls (e.g., aString.upper()).
 (Page 103)
 
@@ -27,9 +18,8 @@ In Python, when we lose the last reference to the object—by assigning its vari
 >>> rec = 0 # Now the object's space is reclaimed
 
 
-if you need to do serious number crunching, an optional extension for Python called NumPy (Numeric Python) 
-provides advanced numeric programming tools, such as a matrix data type, vector processing, and sophisticated computation libraries. 
-Hardcore scientific programming groups at places like Los Alamos and NASA use Python with NumPy 
+if you need to do serious number crunching, an optional extension for Python called NumPy (Numeric Python)
+provides advanced numeric programming tools, such as a matrix data type, vector processing, and sophisticated computation libraries.
+Hardcore scientific programming groups at places like Los Alamos and NASA use Python with NumPy
 to implement the sorts of tasks they previously coded in C++, FORTRAN, or Matlab.
 NumPy is currently an optional extension; it doesn’t come with Python and must be installed separately
-
