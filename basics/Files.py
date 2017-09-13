@@ -90,8 +90,19 @@ for line in open('cls.py'):
 #Manual close (done for you when file is collected)
 fileToRead.close()
 
-#  + Not working
+#  readline Not working
+print('>>>>>  <<<<<<<')
 fileToRead2 = open('SampleTextFile.txt', 'w+')
-fileToRead2.writelines('-----')
+fileToRead2.write('A,B,C')  # writelines()
+fileToRead2.write('\n2,3,4')
 fileToRead2.flush()
-print(fileToRead2.readlines())
+line_read = fileToRead2.readline()
+print('line_read ?:', line_read) # read 1 line only
+
+fileToRead2.close()
+# readline() didn't worked, so close and open again
+fileToRead2 = open('SampleTextFile.txt', 'r')
+line_read = fileToRead2.readline()
+print('line_read >> :', line_read) # read 1 line only
+print('line.rstrip() :', line_read.rstrip())
+print('line.split(\',\') :', line_read.split(','))

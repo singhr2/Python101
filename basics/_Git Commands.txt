@@ -1,5 +1,7 @@
 git status
 
+git diff
+
 git add *.py
 git commit -m "added set example"
 git push
