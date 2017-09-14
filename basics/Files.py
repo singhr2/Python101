@@ -18,7 +18,7 @@ write to the same file object,
 
 > Files work in two modes:
   a) text, which represents content as str and implements Unicode encodings, and
-  b) binary, which deals in raw bytes and does no data translation
+  b) binary (such as an image or audio file), which deals in raw bytes and does no data translation
      binary files are useful for processing media, accessing data created by C programs, and so on.
      Python’s struct module can both create and unpack packed binary data—raw bytes
      that record values that are not Python objects—to be written to a file in binary mode.
