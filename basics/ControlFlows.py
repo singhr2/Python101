@@ -8,6 +8,20 @@
 ## REFERENCE:
 # http://www.openbookproject.net/books/bpp4awd/ch04.html
 
+'''
+* Parentheses are optional	: if (x < y)  ~ if x < y
+* End-of-line ~ end of statement
+* End of indentation ~  end of block
+'''
+
+a = 1; b = 2; print(a + b) # Three statements on one line
+
+#you can make a single statement span across multiple lines. To make this work, you simply have to enclose
+#part of your statement in a bracketed pair—parentheses (()), square brackets ([]), or curly braces ({}).
+X = (a + 
+b)
+print('X is :', X)
+
 #The if else statement
 food ='veg'
 if food == 'spam':
@@ -101,6 +115,13 @@ for i in [12, 16, 17, 24, 29]:
         break       # immediately exit the loop
     print(i)
 print("done")
+
+while True:
+	reply = input('Enter text, type stop to exit:')
+	if reply == 'stop': break
+	print(reply.upper())
+print('Bye, i\'ll stop now as you typed stop')
+
 
 #CONTINUE
 for i in [12, 16, 17, 24, 29, 30]:

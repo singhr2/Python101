@@ -26,15 +26,21 @@ The term “mapping” denotes an object that maps keys to associated values.
 Python’s dictionary is the only mapping type in the core type set. 
 Mappings do not maintain any left-to-right positional ordering; they support access to data stored by key, plus type-specific method calls.
 
+*** everything in a Python system is an object type
+
 Built-in type		Example
 --------------		------------------------------------------
-None				None
+None				(None object)
+					None 
 						A special object serves as an empty placeholder (much like a NULL pointer in C). 
 						it is returned from functions that don’t explicitly return anything.
-					
+					* is always considered to be false.
+					* None does not mean “undefined.” That is, None is something, not nothing (despite its name!)
+					   —it is a real object and a real piece of memory that is created and given a built-in name by Python itself
+					   
 Booleans			True,False
 						True and false are intrinsic properties of every object in Python, each object is either ture of false, as follows:
-
+						* words True and False are equivalent to 1 and 0,
 						Numbers are false if zero, and true otherwise
 						Other objects are false if empty, and true otherwise
 						False:	None, ‘’, [], {}, 0, 0.0, (), set([])
@@ -134,6 +140,7 @@ you are essentially defining a pointer named x that points to some
 other bucket containing the value 4.
 '''
 
+
 # Two ways to import type
 # Option 1 => Refer as fractions.Fraction
 import fractions
@@ -150,7 +157,9 @@ from decimal import  Decimal
 #regardless of its specific type.
 #polymorphism is probably the key idea behind using Python well.
 
-# type is a built-in function which returns type object
+#
+# !!! type is a built-in function which returns type object  !!!!
+#
 print('type(123.45) :', type(123.45)) # <class 'float'>
 
 ## 3.X: types are classes, and vice versa

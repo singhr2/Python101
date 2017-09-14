@@ -1,4 +1,7 @@
 #CollectionsMisc.py
+
+# !!! Assignment Creates References, Not Copies  !!!
+
 L = [1,2,3]
 D = {'a':1, 'b':2}
 
@@ -22,3 +25,15 @@ print('L == L2, L is L2 :', L == L2, L is L2) # True True
 print('L == L3, L is L3 :', L == L3, L is L3) # False False
 print('D == D2, D is D2 :', D == D2, D is D2) # True True
 print('D == D3, D is D3 :', D == D3, D is D3) #  False False
+
+
+
+
+#
+#Cyclic Data Structures
+#Python prints a [...] whenever it detects a cycle in the object, rather than getting stuck in an infinite loop
+#
+
+L2 = ['grail']
+L2.append(L2)
+print(L2) #['grail', [...]]
