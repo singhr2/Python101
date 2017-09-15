@@ -14,39 +14,41 @@
 * End of indentation ~  end of block
 '''
 
-a = 1; b = 2; print(a + b) # Three statements on one line
+a = 1;
+b = 2;
+print(a + b)  # Three statements on one line
 
-#you can make a single statement span across multiple lines. To make this work, you simply have to enclose
-#part of your statement in a bracketed pair—parentheses (()), square brackets ([]), or curly braces ({}).
-X = (a + 
-b)
+# you can make a single statement span across multiple lines. To make this work, you simply have to enclose
+# part of your statement in a bracketed pair—parentheses (()), square brackets ([]), or curly braces ({}).
+X = (a +
+     b)
 print('X is :', X)
 
-#The if else statement
-food ='veg'
+# The if else statement
+food = 'veg'
 if food == 'spam':
     print('Ummmm, my favorite!')
 else:
     print("No, I won't have it. I want spam!")
 
-#e.g. 2
-if True:          # This is always true
-    pass          # so this is always executed, but it does nothing
+# ??? pass (Empty placeholder)
+if True:  # This is always true
+    pass  # so this is always executed, but it does nothing
 else:
     pass
-	
-#e.g. 3
+
+# e.g. 3
 x = int(input("Please enter an integer: "))
 if x < 0:
-	x = 0
-	print('Negative changed to zero')
+    x = 0
+    print('Negative changed to zero')
 elif x == 0:
-	print('Zero')
+    print('Zero')
 elif x == 1:
-	print('Single')
+    print('Single')
 else:
-	print('More')
-	
+    print('More')
+
 # Nested conditionals
 print('\n number comparison')
 num_1 = int(input("Please enter 1st number: "))
@@ -64,8 +66,7 @@ every Python tool that scans an object from left to right uses the iteration pro
 
 '''
 
-
-#for LOOP_VARIABLE in SEQUENCE:
+# for LOOP_VARIABLE in SEQUENCE:
 #    STATEMENTS
 
 for friend in ['Shreya', 'Anshi']:
@@ -73,25 +74,24 @@ for friend in ['Shreya', 'Anshi']:
     print(invitation)
 
 # printing table
-for x in range(13):   # Generate numbers 0 to 12
-    print(x, '\t', 2**x)
+for x in range(13):  # Generate numbers 0 to 12
+    print(x, '\t', 2 ** x)
 
-#e.g. 
+# e.g.
 words = ['cat', 'window', 'defenestrate']
 for w in words:
-	print(w, len(w))
+    print(w, len(w))
 
 for c in 'spam':
-	print(c.upper())
+    print(c.upper())
 
 ## Another while loop example
 x = 4
 print('before while loop')
 while x > 0:
-	print('spam!' * x)
-	x -= 1
+    print('spam!' * x)
+    x -= 1
 print('after while loop')
-
 
 ##
 # The list comprehension will often run faster than a for loop today on some types of code (perhaps even twice as fast)
@@ -99,8 +99,8 @@ print('after while loop')
 
 
 squares = []
-for x in [1, 2, 3, 4, 5]: # This is what a list comprehension does
-	squares.append(x ** 2) # Both run the iteration protocol internally
+for x in [1, 2, 3, 4, 5]:  # This is what a list comprehension does
+    squares.append(x ** 2)  # Both run the iteration protocol internally
 print('squares (approach-1) :', squares);
 
 ''' This is equivalent to below code '''
@@ -108,31 +108,40 @@ squares = []
 squares = [x ** 2 for x in [1, 2, 3, 4, 5]]
 print('squares (approach-2) :', squares);
 
-
 ## BREAK
 for i in [12, 16, 17, 24, 29]:
     if i % 2 == 1:  # if the number is odd
-        break       # immediately exit the loop
+        break  # immediately exit the loop
     print(i)
 print("done")
 
 while True:
-	reply = input('Enter text, type stop to exit:')
-	if reply == 'stop': break
-	print(reply.upper())
+    reply = input('Enter text, type stop to exit:')
+    if reply == 'stop': break
+    print(reply.upper())
 print('Bye, i\'ll stop now as you typed stop')
 
-
-#CONTINUE
+# CONTINUE
 for i in [12, 16, 17, 24, 29, 30]:
-    if i % 2 == 1:      # if the number is odd
-        continue        # don't process it
+    if i % 2 == 1:  # if the number is odd
+        continue  # don't process it
     print(i)
 print("done")
 
 
+# with/as : Context managers (3.X, 2.6+)
+#The advantage of using a with statement is that it is guaranteed to close the file no matter how the nested block exits.
+#This allows common try…except…finally usage patterns to be encapsulated for convenient reuse.
+'''
+with open('output.txt', 'w') as f:
+    f.write('Hi there!')
+'''
+with ['spam'] as iterator:
+    print(iterator)
+
+
 # Comprehensions
-M=[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+M = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 print('M :', M)
 

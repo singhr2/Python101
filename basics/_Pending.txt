@@ -1,2 +1,3 @@
 namedtuple
 struct — Interpret bytes as packed binary data¶
+yield
