@@ -12,6 +12,9 @@
 * Parentheses are optional	: if (x < y)  ~ if x < y
 * End-of-line ~ end of statement
 * End of indentation ~  end of block
+* Assignments create object references
+* Names are created when first assigned. Python creates a variable name the first time you assign it a value (i.e., an object reference)
+* 
 '''
 
 a = 1;
