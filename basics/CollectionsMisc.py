@@ -37,3 +37,13 @@ print('D == D3, D is D3 :', D == D3, D is D3) #  False False
 L2 = ['grail']
 L2.append(L2)
 print(L2) #['grail', [...]]
+
+
+# Expression statements are often used to run list methods that change a list in place
+# BUT using assignment statement instead, intending to assign L to the larger list result in losing list
+L = [1, 2]
+L.append(3)  # Append is an in-place change
+print(L)  # [1, 2, 3]
+
+L = L.append(4)  # But append returns None, not L
+print(L)  # None  (we lose our list!)

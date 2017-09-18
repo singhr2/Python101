@@ -64,11 +64,37 @@ print('languagesList :', languagesList);
 languagesList.reverse()
 print('languagesList :', languagesList);
 
-# Append
+# Append - To add a single item to the end of a list,
+# we can concatenate or call append
 print('\n -->>> append() example');
 print('before :', languagesList);
 languagesList.append('Python')
 print('after :', languagesList);
+
+List3 = [1, 2]
+List3 = List3 + [3] # Concatenate: slower
+print(List3) # [1, 2, 3]
+List3.append(4) # Faster, but in place
+print(List3) # [1, 2, 3, 4]
+
+
+'''
+[ Adding more than one items:  { + (concatenate)  vs extend() method }
+-------------------------------------------------------
+To add a set of items to the end, we can either concatenate (+) or 
+call the list extend() method
+
+Concatenation operations must create a new object, copy in the list on the left, and then
+copy in the list on the right.
+
+By contrast, in-place method calls simply add items at the end of a memory block
+(it can be a bit more complicated than that internally, but this description suffices).
+'''
+List4 = [1, 2]
+List4 = List4 + [5, 6]  # Concatenate: slower
+print(List4)  # [1, 2, 3, 4, 5, 6]
+List4.extend([7, 8])  # Faster, but in place
+print(List4)  # [1, 2, 3, 4, 5, 6, 7, 8]
 
 
 # POP

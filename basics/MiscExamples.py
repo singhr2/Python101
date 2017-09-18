@@ -1,4 +1,3 @@
-
 # MiscExamples.py
 
 
@@ -6,6 +5,14 @@ dir(dict) # dict is the name of the type
 
 help(dict)
 
+
+# Common Python expression statements
+'''
+Operation 			Interpretation
+~~~~~~~~~~~~        ~~~~~~~~~~~~~~~~
+spam(eggs, ham) 	Function calls
+spam.ham(eggs) 		Method calls
+'''
 
 #!/usr/bin/env python3
 

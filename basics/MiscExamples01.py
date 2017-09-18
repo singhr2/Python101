@@ -12,7 +12,18 @@ str(), to convert a value into a string.
 str(savings), for example, will convert the float savings to a string.
 
 Similar functions such as int(), float() and bool() will help you convert Python values into any type.
+
+the == operator, tests whether the two referenced objects have the same values;
+this is the method almost always used for equality checks in Python.
+The second method, the is operator, instead tests for object identity—it returns True only if
+both names point to the exact same object, so it is a much stronger form of equality testing and is rarely applied in most programs.
+
 '''
+
+a = b = 0
+b = b + 1
+print(a, b) #0 1
+
 
 # OPERATORS
 # Exponentiation

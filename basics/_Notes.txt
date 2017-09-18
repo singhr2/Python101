@@ -26,3 +26,4 @@ provides advanced numeric programming tools, such as a matrix data type, vector 
 Hardcore scientific programming groups at places like Los Alamos and NASA use Python with NumPy
 to implement the sorts of tasks they previously coded in C++, FORTRAN, or Matlab.
 NumPy is currently an optional extension; it doesn’t come with Python and must be installed separately
+
