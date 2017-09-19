@@ -1,4 +1,4 @@
-#ExceptionHandlinginPython.py
+# ExceptionHandlinginPython.py
 
 '''
 The code, which harbours the risk of an exception, is embedded in a try block. 
@@ -24,20 +24,19 @@ Custom-made Exceptions
 		raise MyException("An exception doesn't always prove the rule!")
 '''
 
-
-#Following line will throw 'ValueError: invalid literal for int() with base 10: '<yourInputHere>' ' when 1.2 or a is entered
-#n = int(input("Please enter a number: "))
+# Following line will throw 'ValueError: invalid literal for int() with base 10: '<yourInputHere>' ' when 1.2 or a is
+#  entered n = int(input("Please enter a number: "))
 
 while True:
-	try:
-		n = int(input("Please enter a integer: "))  # to accept float use float(input(..))
-		print('Entered value is:', n)
-		break
-	except ValueError:
-		print('Invalid Input, retry')
-	#except (IOError, ValueError):
-	#	print("An I/O error or a ValueError occurred")		
-	except:
-		print("Unexpected error:", sys.exc_info()[0])
-		raise		
+    try:
+        n = int(input("Please enter a integer: "))  # to accept float use float(input(..))
+        print('Entered value is:', n)
+        break
+    except ValueError:
+        print('Invalid Input, retry')
+    # except (IOError, ValueError):
+    #	print("An I/O error or a ValueError occurred")
+    except:
+        print("Unexpected error:", sys.exc_info()[0])
+        raise
 print('Good Job !')

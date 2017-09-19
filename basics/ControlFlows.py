@@ -34,6 +34,15 @@ if food == 'spam':
 else:
     print("No, I won't have it. I want spam!")
 
+
+print("\n-------")
+# Using not
+food = 'asian'
+if not food == 'veg':
+    print('Not veg, might be asian')
+
+
+print("\n-------")
 # ??? pass (Empty placeholder)
 if True:  # This is always true
     pass  # so this is always executed, but it does nothing
