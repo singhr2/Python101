@@ -3,10 +3,19 @@
 # cd  D:\dev\python\Python101\basics
 # python HellowWorld.py
 
+# In Python 3.X, printing is a built-in function
+# it doesn’t return any value we care about (technically,it returns None)
 print('Hello World')
 
 #When two or more arguments are passed, print  function displays each argument separated by space.
-print("Hello", "World")
+# By default, print calls add a space between the objects printed. To suppress this, send an empty string to the sep keyword argument
+str_1 ="hello"
+str_2="ranbir"
+str_3="!"
+print(str_1, str_2, str_3)  # hello ranbir !
+print(str_1, str_2, str_3, sep='')  # helloranbir!
+print(str_1, str_2, str_3, sep=', ')  # hello, ranbir, !
+
 
 # THis is single-line comment
 # print('Hello World')

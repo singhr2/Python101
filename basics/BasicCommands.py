@@ -25,3 +25,14 @@ sys.stdout.write("Hello Ranbir (python 3) using sys.stdout \n")  # hello world
 #print error messages to the standard error stream
 sys.stderr.write(('Bad!' * 8) + '\n')
 
+
+# Block Indentation
+print('block0')
+x = 1
+if x: # Any nonzero number or nonempty object is True
+	print('block1')
+	y = 2
+	if y:
+		print('block2')
+	print('block1')
+print('block0')

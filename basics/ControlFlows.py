@@ -14,8 +14,11 @@
 * End of indentation ~  end of block
 * Assignments create object references
 * Names are created when first assigned. Python creates a variable name the first time you assign it a value (i.e., an object reference)
-* 
+* no switch or case statement in Python
+* Compound statements = header + “:” + indented statements. e.g., if-elif-else
+* Python detects block boundaries automatically, by line indentation
 '''
+
 
 a = 1;
 b = 2;
@@ -27,6 +30,17 @@ X = (a +
      b)
 print('X is :', X)
 
+
+#The if/else Ternary Expression
+'''
+if X:
+	A = Y
+else:
+	A = Z
+'''
+A = Y if X else Z
+
+
 # The if else statement
 food = 'veg'
 if food == 'spam':
@@ -34,15 +48,14 @@ if food == 'spam':
 else:
     print("No, I won't have it. I want spam!")
 
-
-print("\n-------")
 # Using not
+print("\n[1]-------")
 food = 'asian'
 if not food == 'veg':
-    print('Not veg, might be asian')
+    print('Not veg')
 
 
-print("\n-------")
+print("\n[2]-------")
 # ??? pass (Empty placeholder)
 if True:  # This is always true
     pass  # so this is always executed, but it does nothing
@@ -50,6 +63,7 @@ else:
     pass
 
 # e.g. 3
+print("\n[3]-------")
 x = int(input("Please enter an integer: "))
 if x < 0:
     x = 0
@@ -61,8 +75,38 @@ elif x == 1:
 else:
     print('More')
 
+# Altertive to switch 
+# A dictionary-based 'switch',Use has_key or get for default
+print("\n[4]-------")
+choice = input('Enter 1st character of your favourite color ?')
+my_switch_dict = {'b': 'Blue', 'w':'White', 'y':'Yellow', 'g':'green'}
+#This will return KeyError: 'x' (where x is the input entered) if invalid key is entered
+#print(my_switch_dict[choice]) 
+
+#option -1 : get function
+# This will return 'None Sorry , No idea!' if invalid key is entered
+print( my_switch_dict.get(choice), 'Sorry , No idea!') # 2nd parameter is the default value
+
+#option -2  : in membership test in
+if choice in my_switch_dict:
+	print(my_switch_dict[choice])
+else :
+	print('Sorry , No idea!')
+	
+#option -3  : try-except
+try:
+	print(my_switch_dict[choice])
+except:
+	print('Sorry , No idea!')
+
+'''
+import sys
+sys.exit(0)
+'''
+
+
 # Nested conditionals
-print('\n number comparison')
+print('\n [5]number comparison')
 num_1 = int(input("Please enter 1st number: "))
 num_2 = int(input("Please enter 2nd number: "))
 if num_1 < num_2:
@@ -81,6 +125,15 @@ every Python tool that scans an object from left to right uses the iteration pro
 # for LOOP_VARIABLE in SEQUENCE:
 #    STATEMENTS
 
+'''
+for target in object: # Assign object items to target
+	statements # Repeated loop body: use target
+	if test: break # Exit loop now, skip else
+	if test: continue # Go to top of loop now
+else:
+	statements # If we didn't hit a 'break'	
+'''
+
 for friend in ['Shreya', 'Anshi']:
     invitation = "Hi " + friend + ".  Please come to my party on Saturday!"
     print(invitation)
@@ -97,13 +150,6 @@ for w in words:
 for c in 'spam':
     print(c.upper())
 
-## Another while loop example
-x = 4
-print('before while loop')
-while x > 0:
-    print('spam!' * x)
-    x -= 1
-print('after while loop')
 
 ##
 # The list comprehension will often run faster than a for loop today on some types of code (perhaps even twice as fast)
@@ -127,6 +173,34 @@ for i in [12, 16, 17, 24, 29]:
     print(i)
 print("done")
 
+
+
+#
+# while loop
+#
+# break: Jumps out of the closest enclosing loop
+# continue: Jumps to the top of the closest enclosing loop
+# pass: Does nothing at all: it’s an empty statement placeholder
+#		pass is roughly to statements as None is to objects—an explicit nothing.
+# Loop else block : Runs if and only if the loop is exited normally
+
+'''
+while test:  # Loop test
+	statements  # Loop body
+	if test: break # Exit loop now, skip else if present
+	if test: continue # Go to top of loop now, to test1
+else:  # Optional else
+	statements # Run if didn't exit loop with break
+'''
+
+## Another while loop example
+x = 4
+print('before while loop')
+while x > 0:
+    print('spam!' * x)
+    x -= 1
+print('after while loop')
+
 while True:
     reply = input('Enter text, type stop to exit:')
     if reply == 'stop': break
@@ -148,9 +222,12 @@ print("done")
 with open('output.txt', 'w') as f:
     f.write('Hi there!')
 '''
+
+# AttributeError: __enter__
+'''
 with ['spam'] as iterator:
     print(iterator)
-
+'''
 
 # Comprehensions
 M = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]

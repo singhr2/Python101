@@ -122,7 +122,7 @@ copiedDict = dummyDict.copy()
 print('copiedDict :', copiedDict)
 
 
-# get
+# get : to get default value if nothing matches.
 print('dummyDict.get(\'nonExistentKey\', \'000\') :', dummyDict.get('nonExistentKey', '000')) # 000
 print('dummyDict.get(\'nonExistentKey\') :', dummyDict.get('nonExistentKey')) # None
 if dummyDict.get('c') != None: print('present', dummyDict['c']) # nothing printed
