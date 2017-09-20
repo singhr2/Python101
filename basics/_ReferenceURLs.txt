@@ -7,3 +7,6 @@ https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial
 http://www.openbookproject.net/books/bpp4awd/index.html
 https://www.python-course.eu/python3_course.php
 https://www.datacamp.com/courses/intro-to-python-for-data-science
+
+#Built-in Functions¶
+https://docs.python.org/3.4/library/functions.html
