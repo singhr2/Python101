@@ -12,6 +12,7 @@
 * Parentheses are optional	: if (x < y)  ~ if x < y
 * End-of-line ~ end of statement
 * End of indentation ~  end of block
+* Python detects block boundaries automatically, by line indentation
 * Assignments create object references
 * Names are created when first assigned. Python creates a variable name the first time you assign it a value (i.e., an object reference)
 * no switch or case statement in Python
@@ -38,8 +39,32 @@ if X:
 else:
 	A = Z
 '''
-A = Y if X else Z
 
+# NameError: name 'X2' is not defined  <<-- If variable is unassigned
+#X2 = ''  # retuns -> condition is false
+X2 = 'A' # returns ->> condition is true
+Y2 = 'condition is true'
+Z2 = 'condition is false'
+A2 = Y2 if X2 else Z2
+print(A2)
+
+
+# Block Indentation
+print('\n block0')
+x = 1
+if x: # Any nonzero number or nonempty object is True
+	print('block1')
+	y = 2
+	if y:
+		print('block2')
+	print('block1')
+print('block0')
+
+
+"""
+import sys
+sys.exit(0)
+"""
 
 # The if else statement
 food = 'veg'
@@ -99,10 +124,6 @@ try:
 except:
 	print('Sorry , No idea!')
 
-'''
-import sys
-sys.exit(0)
-'''
 
 
 # Nested conditionals
@@ -172,6 +193,32 @@ for i in [12, 16, 17, 24, 29]:
         break  # immediately exit the loop
     print(i)
 print("done")
+
+
+# A tuple of values is assigned to a tuple of names on each iteration,
+'''
+ > ValueError: too many values to unpack (expected 3)
+    When Values in list (inside Tuple) are more than variables in for loop
+        T = [(1, 2, 3), ('a', 'b', 'c'), (True, False, None, True)]
+        for(x,y,z) in T:
+
+ > ValueError: not enough values to unpack (expected 3, got 2)
+    When values in any list in tuple are less than variables in for loop 
+        T = [(1, 2, 3), ('a', 'b', 'c'), (True, False)]
+        for(x,y,z) in T:
+'''
+T = [(1, 2, 3), ('a', 'b', 'c'), (True, False, None)]
+for (x, y, z) in T:
+    print(x, y)
+
+# extended sequence assignment
+'''
+1[2, 3] 4
+5[6, 7] 8
+'''
+for (a, *b, c) in [(1, 2, 3, 4), (5, 6, 7, 8)]:
+    print(a, b, c)
+
 
 
 
