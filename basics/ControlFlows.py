@@ -212,6 +212,7 @@ for (x, y, z) in T:
     print(x, y)
 
 # extended sequence assignment
+# *b indicates b will have everyhting left over after a and c
 '''
 1[2, 3] 4
 5[6, 7] 8
@@ -219,7 +220,17 @@ for (x, y, z) in T:
 for (a, *b, c) in [(1, 2, 3, 4), (5, 6, 7, 8)]:
     print(a, b, c)
 
-
+# sequence assignment 2
+'''
+Output:
+a,b, C : 1 , 2 , 3
+a,b, C : X , Y , 6
+'''
+print('\n sequence assignment example 2')
+for ((a, b), c) in [([1, 2], 3), ['XY', 6]]:
+    print('a,b, C :', a, ',',  b, ',', c)
+	
+	
 
 # zip(*iterables) built-in function
 '''
@@ -256,10 +267,6 @@ result = zip(numbersList, strList, numbersTuple)
 resultSet = set(result)
 print('resultSet 3 iterators :', resultSet) # {(1, 'one', 'ONE'), (2, 'two', 'TWO')}
 	
-
-	
-# 
-
 	
 #---------------------------------------------------
 # map() function : map(function, iterable(1..*), ...)
@@ -309,6 +316,7 @@ temperatures_in_Fahrenheit = list(map(fahrenheit, temperatures))
 temperatures_in_Celsius = list(map(celsius, temperatures_in_Fahrenheit))
 print(temperatures_in_Fahrenheit) # [97.7, 98.60000000000001, 99.5, 100.4, 102.2]
 print(temperatures_in_Celsius) # [36.5, 37.00000000000001, 37.5, 38.00000000000001, 39.0]
+
 
 
 #
