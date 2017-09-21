@@ -212,6 +212,7 @@ for (x, y, z) in T:
     print(x, y)
 
 # extended sequence assignment
+# *b indicates b will have everyhting left over after a and c
 '''
 1[2, 3] 4
 5[6, 7] 8
@@ -219,9 +220,16 @@ for (x, y, z) in T:
 for (a, *b, c) in [(1, 2, 3, 4), (5, 6, 7, 8)]:
     print(a, b, c)
 
+# sequence assignment 2
+'''
+Output:
+a,b, C : 1 , 2 , 3
+a,b, C : X , Y , 6
 
-
-
+'''
+print('\n sequence assignment example 2')
+for ((a, b), c) in [([1, 2], 3), ['XY', 6]]:
+    print('a,b, C :', a, ',',  b, ',', c)
 #
 # while loop
 #
