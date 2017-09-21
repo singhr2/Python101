@@ -4,9 +4,11 @@
 # To check Python version (at command prompt)
 #1) At command prompt, type python
 #python
-#2 At command prompt, type python -V (capital V)
-#python -V
-#3 in code
+#2) At command prompt, type python -V (capital V)
+# python -V
+# -or-
+# python --version
+#3) in code
 import sys
 print(sys.version) # Human readable -> 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)]
 print(sys.version_info) # sys.version_info(major=3, minor=6, micro=2, releaselevel='final', serial=0)

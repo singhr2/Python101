@@ -66,6 +66,8 @@ fileToRead = open('SampleTextFile.txt', 'r')
 print('\n >>> reading 6 chars [', fileToRead.read(6), ']')
 print() #Read up to next N characters (or bytes) into a string
 
+# open file objects have a method called readline, which reads one line of text from a file at a time—
+# each time we call the readline method, we advance to the next line
 print('>>> Reading next line (including \\n newline) into a string')
 aString = fileToRead.readline()
 print(aString)
@@ -79,10 +81,6 @@ fileToRead.seek(0)
 
 print('\n >>> readlines() - ', fileToRead.readlines())  # Read entire file into list of line strings (with \n)
 
-
-#use line File iterators read line by line
-for line in open('SampleTextFile.txt'):
-    print(line)
 
 #Flush output buffer to disk without closing
 #someFileName.flush()
@@ -106,3 +104,44 @@ line_read = fileToRead2.readline()
 print('line_read >> :', line_read) # read 1 line only
 print('line.rstrip() :', line_read.rstrip())
 print('line.split(\',\') :', line_read.split(','))
+
+
+
+# __next__ in 3.X
+# it returns the next line from a file each time it is called. 
+# The only noticeable difference is that __next__ raises a built-in StopIteration exception at end-of-file instead of returning an empty string (as done by readline)
+#
+print('\n -------\n printing file contents using __next__()\n -------')
+'''
+f = open('xSampleTextFile.txt')
+while f.__next__() != '' :
+	f.__next__()
+'''
+
+#RECOMMENDED : use 'File iterators' to read by lines
+#best approach is to not read it at all—instead, allow the for loop to automatically call __next__ to advance to the next line on each iteration. 
+#The file object’s iterator will do the work of automatically loading lines as you go.
+for line in open('xSampleTextFile.txt'):
+    print(line)
+
+# old way of doing this
+print('\n -------\n printing file contents using while loop \n -------')
+f = open('xSampleTextFile.txt')
+while True:
+	line = f.readline()
+	if not line: break  # line will equal False if zero-length
+	print(line, end='')
+
+'''
+	Python 3.X also provides a built-in function, next,
+	that automatically calls an object’s __next__ method. 
+	i.e. next(file) built-in calls file.__next__() in 3.X
+	
+	Given an iterator object X, the call next(X) is the same as X.__next__() on 3.X
+'''
+print('\n -------\n printing file contents using next(f) built-in function\n -------')
+# will return StopIteration exception if trying to call after eof
+f = open('xSampleTextFile.txt')
+print(next(f), end='') # The next(f) built-in calls f.__next__() in 3.X
+print(next(f), end='') # next(f) => [3.X: f.__next__()], [2.X: f.next()]
+

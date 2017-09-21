@@ -221,8 +221,102 @@ for (a, *b, c) in [(1, 2, 3, 4), (5, 6, 7, 8)]:
 
 
 
+# zip(*iterables) built-in function
+'''
+ > allows us to use for loops to visit multiple sequences in parallel—not overlapping in time, but during the same loop.
+ > zip takes one or more sequences as arguments and returns a series of tuples that pair up parallel items taken from those sequences
+ 
+ The zip() function returns an iterator of tuples based on the iterable object.
+ > If no parameters are passed, zip() returns an empty iterator
+ > If a single iterable is passed, zip() returns an iterator of 1-tuples. Meaning, the number of elements in each tuple is 1.
+ > If multiple iterables are passed, ith tuple contains ith 
+	Suppose, two iterables are passed; one iterable containing 3 and other containing 5 elements. 
+	Then, the returned iterator has 3 tuples. It's because iterator stops when shortest iterable is exhaused. <---
+'''
+numbersList = [1, 2, 3]
+strList = ['one', 'two']
+numbersTuple = ('ONE', 'TWO', 'THREE', 'FOUR')
+
+# Converting to set - Using 2 Iterables
+result = zip(numbersList, numbersTuple)   
+resultSet = set(result)
+print('type of result :', type(result)) # <class 'zip'>
+print('zip result :', result) #  <zip object at 0x00719EE0>
+print('resultSet :', resultSet) #  {(1, 'ONE'), (2, 'TWO'), (3, 'THREE')}
+
+# Convert to List
+resultList = list(result) # []
+print('resultList 1:', resultList)
+resultList = list(zip(numbersList, numbersTuple)) #  [(1, 'ONE'), (2, 'TWO'), (3, 'THREE')]
+print('resultList 2:', resultList)
+
+
+# Converting to set - Using 3 Iterables 
+result = zip(numbersList, strList, numbersTuple)
+resultSet = set(result)
+print('resultSet 3 iterators :', resultSet) # {(1, 'one', 'ONE'), (2, 'two', 'TWO')}
+	
+
+	
+# 
+
+	
+#---------------------------------------------------
+# map() function : map(function, iterable(1..*), ...)
+#  Normally, map takes a function and one or more sequence arguments and 
+#  collects the results of calling the function with parallel items taken from the sequence(s).
+# 	in short, The map() function applies a given to function to each item of an iterable and 
+#   returns a list of the results.
+#    function - map() passes each item of the iterable (list, tuple etc.) to this function.
+#    iterable - iterable(list, tuple etc.) which is to be mapped
+#---------------------------------------------------
+
+# e.g., 1 : map using custom function
+def calculateSquare(n):
+  return n*n
+
+numbers = (1, 2, 3, 4)
+result = map(calculateSquare, numbers) # note the function name is not in quotes
+print('\nresult from map :', result) # <map object at 0x01F43310>
+
+# converting map object to set
+numbersSquare = set(result)
+print('map > numbersSquare :', numbersSquare) #  {16, 1, 4, 9}
+
+# e.g., 2 : map using built-in function
+input_string = ['Just Do It', '2nd', 'third']
+resultMap2 = map(len, input_string)
+print('map > list[resultMap2] :', list(resultMap2)) #  [10, 3, 5]
+print('map > set[resultMap2] :', set(resultMap2)) #   set()
+
+resultMap2 = map(len, input_string)
+print('map > set[resultMap2] :', set(resultMap2)) #   {10, 3, 5}
+
+
+
+# e.g.3
+def fahrenheit(T):
+    return ((float(9)/5)*T + 32)
+
+def celsius(T):
+    return (float(5)/9)*(T-32)
+
+temperatures = (36.5, 37, 37.5, 38, 39)
+F = map(fahrenheit, temperatures)
+C = map(celsius, F)
+
+temperatures_in_Fahrenheit = list(map(fahrenheit, temperatures))
+temperatures_in_Celsius = list(map(celsius, temperatures_in_Fahrenheit))
+print(temperatures_in_Fahrenheit) # [97.7, 98.60000000000001, 99.5, 100.4, 102.2]
+print(temperatures_in_Celsius) # [36.5, 37.00000000000001, 37.5, 38.00000000000001, 39.0]
+
 
 #
+# Since map() expects a function to be passed in, lambda functions are commonly used while working with map() functions.
+# A lambda function is a function without a name.
+# 
+
+# ---------------------------------------------------
 # while loop
 #
 # break: Jumps out of the closest enclosing loop
@@ -230,6 +324,7 @@ for (a, *b, c) in [(1, 2, 3, 4), (5, 6, 7, 8)]:
 # pass: Does nothing at all: it’s an empty statement placeholder
 #		pass is roughly to statements as None is to objects—an explicit nothing.
 # Loop else block : Runs if and only if the loop is exited normally
+# ---------------------------------------------------
 
 '''
 while test:  # Loop test
@@ -249,8 +344,8 @@ while x > 0:
 print('after while loop')
 
 while True:
-    reply = input('Enter text, type stop to exit:')
-    if reply == 'stop': break
+    reply = input('Enter text, type q to exit:')
+    if reply == 'q': break
     print(reply.upper())
 print('Bye, i\'ll stop now as you typed stop')
 

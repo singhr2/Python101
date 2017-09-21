@@ -10,3 +10,4 @@ https://www.datacamp.com/courses/intro-to-python-for-data-science
 
 #Built-in Functions¶
 https://docs.python.org/3.4/library/functions.html
+https://www.programiz.com/python-programming/methods/built-in/map
