@@ -1,3 +1,5 @@
+# StringDemo.py
+
 #http://thepythonguru.com/python-strings/
 
 one_char = 'a'
@@ -15,6 +17,13 @@ is
 it""")
 
 print("Roses are red \n Violets are blue ")
+
+
+#String functions : https://docs.python.org/3/library/stdtypes.html
+print('cApitalizE'.capitalize())  # Capitalize
+
+
+
 
 # String Concatanation
 #Using + to Combine Strings

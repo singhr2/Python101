@@ -270,6 +270,7 @@ print('resultSet 3 iterators :', resultSet) # {(1, 'one', 'ONE'), (2, 'two', 'TW
 	
 #---------------------------------------------------
 # map() function : map(function, iterable(1..*), ...)
+#
 #  Normally, map takes a function and one or more sequence arguments and 
 #  collects the results of calling the function with parallel items taken from the sequence(s).
 # 	in short, The map() function applies a given to function to each item of an iterable and 

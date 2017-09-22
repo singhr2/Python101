@@ -139,6 +139,8 @@ while True:
 	
 	Given an iterator object X, the call next(X) is the same as X.__next__() on 3.X
 '''
+# next() 
+
 print('\n -------\n printing file contents using next(f) built-in function\n -------')
 # will return StopIteration exception if trying to call after eof
 f = open('xSampleTextFile.txt')
