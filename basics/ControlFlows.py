@@ -323,7 +323,10 @@ print(temperatures_in_Celsius) # [36.5, 37.00000000000001, 37.5, 38.000000000000
 #
 # Since map() expects a function to be passed in, lambda functions are commonly used while working with map() functions.
 # A lambda function is a function without a name.
-# 
+# lambda is just a shorthand to create an anonymous function. 
+
+
+
 
 # ---------------------------------------------------
 # while loop

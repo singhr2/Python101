@@ -22,7 +22,16 @@ print("Roses are red \n Violets are blue ")
 #String functions : https://docs.python.org/3/library/stdtypes.html
 print('cApitalizE'.capitalize())  # Capitalize
 
+#left strip
+print('[', '   spacious   '.lstrip(), ']')  # [ spacious    ]
+print('[', 'www.example.com'.lstrip('cmowz.'), ']') # [ example.com ]
 
+#right strip
+print('[', '   spacious   '.rstrip() , ']')  # [    spacious ]
+print('[', 'mississippi'.rstrip('ipz') , ']')  # [ mississ ]
+
+"42".zfill(5) # '00042'
+"-42".zfill(5) # '-0042'
 
 
 # String Concatanation
