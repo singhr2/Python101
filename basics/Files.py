@@ -42,7 +42,16 @@ print('splitting file contents ')
 print(fileContents.split())
 
 # printing content using for loop
-for line in open('xDummyFile.txt'): print(line)
+for count in [1, 2, 3]:
+    print(count)
+    print('Yes' * count)
+
+print('\n ----- printing content using for loop')
+for line in open('xDummyFile.txt'):
+    # print(type(line))  # <class 'str'>
+    print(line, end='')
+print('\n *** Done printing content using for loop.')
+
 
 #To access files containing non-ASCII Unicode text, we simply pass in an translation (a.k.a. encoding) name
 #if the text in the file doesn’t match the default encoding for our platform.

@@ -1,0 +1,62 @@
+ISO-8859-1 (also called Latin-1)
+Windows-1252 (also called CP1252)
+
+
+https://www.w3schools.com/howto/default.asp
+
+HTML5 has a new attribute, charset, which makes it easier to define charset:
+HTML 4.01: <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+HTML5: <meta charset="UTF-8">
+
+A Unicode encoding such as UTF-8 is a good choice for a number of reasons.
+
+ISO-8859-1 was the default character set for HTML 4. This character set also supported 256 different character codes.
+The default character-set in HTML5 is UTF-8.
+UTF-8 (Unicode) covers almost all of the characters and symbols in the world.
+
+
+character encoding
+UTF-8 - Character encoding for Unicode (“Universal Transformation Format” (8 bit))
+ISO-8859-1 - Character encoding for the Latin alphabet
+CP1252 is a character set that very much resembles ISO-8859-1. It was introduced by Microsoft for the Windows operating system.
+
+Character	From Windows-1252	From UTF-8
+£		%A3			%C2%A3
+
+&pound; is HTML-decoded to £
+
+http://www.i18nqa.com/debug/utf8-debug.html
+Code Point			Characters			UTF-8 Bytes
+---------------------------     -----------------------------   -----------
+Unicode		Windows		Expected	Actual
+U+00E3		0xE3		ã		Ã£		%C3 %A3
+
+A Content-Type tells the web browser or email application how to interpret the text characters in your HTML or the body of the email.
+The most popular character sets are UTF-8 and ISO-8859-1.
+
+https://www.w3schools.com/html/html_charset.asp
+À	Latin capital letter A with grave
+Á	Latin capital letter A with acute
+Â	Latin capital letter A with circumflex
+Ã	Latin capital letter A with tilde
+Ä	Latin capital letter A with diaeresis
+
+
+
+HTML Encoding is a way of ensuring text will be accurately shown by a browser.
+Wikipedia is a great case study for an application that originally used ISO-8859-1 but switched to UTF-8 when it became far to cumbersome to support foreign languages.
+ServletResponse.setContentType ("text/html;charset=utf-8");
+
+The process of ‘HTML encoding’ involves replacing certain characters (such as < and >) with a particular ‘escape sequence’ of characters that a browser knows how to display and that don’ interfere with browser rendering.
+
+
+There are two types of form submission: application/x-www-form-urlencoded which is used for GET and by default for POST, and multipart/form-data which may be used by POST, and is required when you want to upload files.
+
+application/x-www-form-urlencoded
+
+
+This is the Content-Type that GET requests must use, and POST requests use by default.
+
+multipart/form-data
+Multipart form submission takes away a lot of the ambiguity that percent-encoding had
+

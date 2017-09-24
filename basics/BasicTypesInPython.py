@@ -133,21 +133,24 @@ bool(X), True, False 					Boolean type and constants
 
 '''
 In Python, by contrast, variables are best
-thought of not as containers but as pointers. So in Python, when you
-write
+thought of not as containers but as pointers. So in Python, when you write
 x = 4
-you are essentially defining a pointer named x that points to some
-other bucket containing the value 4.
+you are essentially defining a pointer named x that points to some other bucket 
+containing the value 4.
+
+<!> When you use a name in a program, 
+    Python creates, changes, or looks up the name in what is known as a namespace —
+        a place where names live.
 '''
 
 
 # Two ways to import type
 # Option 1 => Refer as fractions.Fraction
 import fractions
+
 # Option 2 => Refer as Fraction
 # from <module-name> import <TypeName>
 from fractions import Fraction 
-
 from decimal import  Decimal
 
 

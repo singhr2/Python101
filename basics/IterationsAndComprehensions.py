@@ -27,7 +27,8 @@ print()
 # The built-in function iter() 
 #	takes an iterable object and returns an iterator.
 #
-# Each time we call the next method on the iterator gives us the next element. If there are no more elements, it raises a StopIteration.
+# Each time we call the next method on the iterator gives us the next element. If there are no more elements,
+# it raises a StopIteration.
 iterator1 = iter(input_numbers)
 print('Type of iterator :', type(iterator1))
 print('Next item :', next(iterator1))
@@ -57,7 +58,8 @@ grocery = ['bread', 'milk', 'butter']
 for item in enumerate(grocery):
   print(item)
 
-'''
+
+''' Output of below loop is;
 0 bread  
 1 milk   
 2 butter 
@@ -66,7 +68,8 @@ print('\n')
 for count, item in enumerate(grocery):
   print(count, item)
 
-'''
+
+''' output for below example is :
 100 bread    
 101 milk     
 102 butter   
@@ -102,8 +105,20 @@ print('L2 :', L2)  # L2 : [21, 22, 23, 24, 25]
 for x in L2:
 	print(x)
 
-## Convert to uppercase
+
+# Convert to uppercase
 X2 =['This', 'is', 'a', 'sample', 'input']
 for n2 in X2:
 	print(n2.upper())
 
+
+# collects all the ordered combinations of the characters in two strings:
+'''
+Output is :
+['1a', '1b', '2a', '2b', '3a', '3b', '4a', '4b']
+'''
+print([firstLoopVar + secondLoopVar for firstLoopVar in '1234' for secondLoopVar in 'ab'])
+
+print('Printing Non __X names only')
+import sys
+print(len([x for x in dir(sys) if not x.startswith('__')]))

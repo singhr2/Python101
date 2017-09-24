@@ -18,6 +18,15 @@
 * no switch or case statement in Python
 * Compound statements = header + “:” + indented statements. e.g., if-elif-else
 * Python detects block boundaries automatically, by line indentation
+
+<!> Python’s set data type provides a built-in intersection operation
+
+sorted : sorts items in an iterable;
+zip : combines items from iterables;
+enumerate : pairs items in an iterable with relative positions;
+filter : selects items for which a function is true; and
+reduce : runs pairs of items in an iterable through a function.
+All of these accept iterables, and zip, enumerate, and filter also return an iterable in Python 3.X, like map.
 '''
 
 

@@ -1,6 +1,5 @@
 # BasicCommands.py
 
-
 # To check Python version (at command prompt)
 #1) At command prompt, type python
 #python
@@ -39,4 +38,17 @@ sys.stdout.write("Hello Ranbir (python 3) using sys.stdout \n")  # hello world
 #print error messages to the standard error stream
 sys.stderr.write(('Bad!' * 8) + '\n')
 
+
+
+#
+# Variable declaration
+#
+
+# Define three variables at once:
+count, result, total = 0, 0, 0
+
+# This is equivalent to:
+count = 0
+result = 0
+total = 0
 
