@@ -6,17 +6,14 @@
 
 
 # Everything in Python is an object. Name is a way to access the underlying object.
-# For example, when we do the assignment a = 2, here 2 is an object stored in memory and
-# a is the name we associate it with.
+# For example, when we do the assignment a = 2, here
+# 		2 is an object stored in memory and 
+#		a is the name we associate it with.
 # We can get the address (in RAM) of some object through the built-in function, id().
 
-# namespace
-# namespace is a collection of names.
-# Each module creates its own global namespace.
-#       Modules refer to a file containing Python statements and definitions.
+# namespace = collection of names; a place where names live.
+# 	Each module creates its own global namespace.
 
-# Python creates, changes, or looks up the name in what is known as a namespace —
-#         a place where names live.
 
 # [global variable]
 # A variable which is defined in the main body of a file is called a global variable.
@@ -24,20 +21,48 @@
 
 # [local variable]
 # A variable which is defined inside a function is local to that function.
-# It is accessible from the point at which it is defined until the end of the function, and
-# exists for as long as the function is executing.
+# It is accessible from the point at which it is defined until the end of the function, and exists for as long as the function is executing.
 
-# The parameter names in the function definition behave like local variables,
+# The parameter names in the function definition behave like local variables, 
 # but they contain the values that we pass into the function when we call it.
 
 '''
 * Functions define a local scope and modules define a global scope
+* variable scopes are determined entirely by the locations of the variables in the source code of your program files, not by function calls.
 * Also note that any type of assignment within a function classifies a name as local
-• If a variable is assigned inside a def, it is local to that function.
-• If a variable is assigned in an enclosing def, it is nonlocal to nested functions.
-• If a variable is assigned outside all defs, it is global to the entire file.
+• If a variable is assigned inside a def, it is 'local' to that function.
+• If a variable is assigned in an enclosing def, it is 'nonlocal' to nested functions.
+• If a variable is assigned outside all defs, it is 'global' to the entire file.
+	=> When you hear “global” in Python, think “module.”
+	
+<!> Name references search at most four scopes: local, then enclosing functions (if any), then global{enclosing module}, then built-in.
+	
+<!> If you need to assign a name that lives at the top level of the module enclosing the function, 
+		you can do so by declaring it in a 'global' statement inside the function. 
+		
+<!> If you need to assign a name that lives in an enclosing def, 
+		as of Python 3.X you can do so by declaring it in a 'nonlocal' statement.	
+
+<!> code typed at the interactive command prompt lives in a module, too, and follows the normal scope rules: 
+		they are global variables, accessible to the entire interactive session
 '''
 
+'''
+	Python’s name-resolution scheme is sometimes called the LEGB rule
+	When you use an unqualified name inside a function, Python searches up to four scopes
+	— the local (L) scope i.e. function , then 
+	- the local scopes of any enclosing (E) defs and lambdas, then 
+	- the global (G) scope i.e. Module, and then 
+	- the built-in (B) scope — and stops at the first place the name is found. 
+		* the built-in scope is just a built-in module called builtins
+		* The built-in scope is implemented as a standard library module named builtins in 3.X
+	
+	
+	Note: 
+	* global statement tells Python that a function plans to change one or more global names
+	* Modules refer to a file containing Python statements and definitions.
+	* If the name is not found during this search, Python reports an error.
+'''
 
 # ---------------------
 # ---- example 1 -----
@@ -103,3 +128,24 @@ f2()
 
 # Why local is printed ???
 print('3.c :', s)  # prints -> 3.c : !!! local !!!
+
+
+
+#---------------------
+# ---- example 4 ------
+# ---------------------
+print('\n ----- executing example 4')
+def hider():
+    open = 'spam' # Local variable, hides built-in here
+	
+	# The below line will no longer opens a file in this scope!
+	# TypeError: 'str' object is not callable
+    # open('data.txt') 
+
+hider()
+
+#---------------------
+# ---- example 5 ------
+# ---------------------
+
+
