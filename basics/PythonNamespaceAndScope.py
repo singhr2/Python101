@@ -19,6 +19,10 @@
 # A variable which is defined in the main body of a file is called a global variable.
 # It will be visible throughout the file, and also inside any file which imports that file.
 
+# <!> <!> <!> Avoid the temptation to use globals whenever you can—they tend to make programs difficult to understand and reuse, 
+# and won’t work for cases where one copy of saved data is not enough.
+# Try to communicate by calling functions, passing in arguments and getting back return values.
+
 # [local variable]
 # A variable which is defined inside a function is local to that function.
 # It is accessible from the point at which it is defined until the end of the function, and exists for as long as the function is executing.
