@@ -40,3 +40,9 @@ def f1():
 action = f1() # Make, return function
 action() # Call it now: prints 88
 
+
+'''
+Factory functions (a.k.a. closures)
+	closure - describing a functional programming technique, and 
+	factory function— denoting a design pattern
+'''

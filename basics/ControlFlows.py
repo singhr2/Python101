@@ -393,6 +393,7 @@ with ['spam'] as iterator:
 '''
 
 # Comprehensions
+#  list comprehensions is this: [EXPRESSION FOR ELEMENT IN SEQUENCE].
 M = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 print('M :', M)

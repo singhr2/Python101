@@ -62,6 +62,17 @@
 		* The built-in scope is implemented as a standard library module named builtins in 3.X
 	
 	
+	Python 3 introduced the nonlocal  keyword that allows you to assign to variables in an outer, but non-global, scope.
+	which has meaning only inside a function else following 
+			SyntaxError: nonlocal declaration not allowed at module level
+
+	The names listed in a nonlocal must have been previously defined in an enclosing def when the nonlocal is reached, or an error is raised. 
+	The net effect is much like global:
+		global means the names reside in the enclosing module, and 
+		nonlocal means they reside in an enclosing def. 
+		nonlocal is even more strict, though—scope search is restricted to only enclosing defs. 
+		That is, nonlocal names can appear only in enclosing defs, not in the module’s global scope or built-in scopes outside the defs.
+	
 	Note: 
 	* global statement tells Python that a function plans to change one or more global names
 	* Modules refer to a file containing Python statements and definitions.
@@ -148,8 +159,95 @@ def hider():
 
 hider()
 
+print('\n ----- executing example 5a - w/o nonlocal')
 #---------------------
-# ---- example 5 ------
+# ---- example 5 : nonlocal ------
 # ---------------------
 
+'''
+msg  is declared in the outside function and assigned the value "Outside!". 
+Then, in the inside function, the value "Inside!" is assigned to it. 
+When we run outside, msg has the value "Inside!" in the inside function, 
+but retains the old value in the outside function.
+
+ Python hasn’t actually assigned to the existing msg variable, 
+ BUT HAS CREATED A NEW VARIABLE called msg in the local scope 
+ of inside that shadows the name of the variable in the outer scope.
+ 
+Without nonlocal, the below example outputs:
+Inside!
+Outside! 
+'''
+def outside():
+	msg = "Outside!"
+	
+	def inside():
+		msg = "Inside!"
+		print(msg)
+		
+	inside()
+	print(msg)
+outside()
+
+
+#Preventing that behaviour is where the nonlocal keyword comes in.
+print('\n ----- executing example 5b - nonlocal')
+
+'''
+Now, by adding nonlocal msg to the top of inside, Python knows that when it sees an assignment to msg, 
+it should assign to the variable from the outer scope instead of declaring a new variable that shadows its name.
+
+The usage of nonlocal is very similar to that of global, 
+except that the former is used for variables in outer function scopes and 
+the latter is used for variable in the global scope.
+
+so unlike global, nonlocal names must already exist in the enclosing function’s scope when declared
+—they can exist only in enclosing functions and cannot be created by a first assignment in a nested def.
+
+With nonlocal, the below example outputs:
+Inside!
+Inside!
+'''
+def outside():
+	msg = "Outside!"
+	
+	def inside():	
+		nonlocal msg  # don't create local variable.
+		msg = "Inside!"
+		print(msg)
+		
+	inside()
+	print(msg)
+outside()
+
+
+
+#---------------------
+# ---- example 6 : scope with dict ------
+# ---------------------
+print('\n ----- executing example 6 - scope with dict')
+
+'''
+It would be reasonable to expect that without using nonlocal the insertion of the "inside": 2 key-value pair in the dictionary 
+would not be reflected in outside. Reasonable, but incorrect, because 
+the DICTIONARY INSERTION IS NOT AN ASSIGNMENT, BUT A METHOD CALL. 
+In fact, inserting a key-value pair into a dictionary is equivalent 
+to calling the __setitem__ method on the dictionary object.
+
+Output from below program:
+	{'outside': 1}
+	{'outside': 1, 'inside': 2}
+	{'outside': 1, 'inside': 2}
+'''
+def outside():
+	d = {"outside": 1}
+	print(d)
+	def inside():
+		d["inside"] = 2
+		print(d)
+	
+	inside()
+	print(d)
+		
+outside()
 
