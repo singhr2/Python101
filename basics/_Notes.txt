@@ -1,4 +1,6 @@
-﻿>> How to clear python interpreter console
+﻿pip, Python package manager.
+
+>> How to clear python interpreter console
 import os
 os.system('cls')
 
