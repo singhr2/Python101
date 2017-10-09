@@ -30,6 +30,29 @@ All of these accept iterables, and zip, enumerate, and filter also return an ite
 '''
 
 
+# isinstance(object, classinfo)
+# The isinstance() function checks if the object (first argument) is an instance or subclass of classinfo class (second argument).
+#   * object - object to be checked
+#   * classinfo - class, type, or tuple of classes and types
+class Foo:
+  a = 5
+  
+fooInstance = Foo()
+
+print(isinstance(fooInstance, Foo))  # True
+print(isinstance(fooInstance, (list, tuple)))  # False
+print(isinstance(fooInstance, (list, tuple, Foo)))  # True
+
+
+numbers = [1, 2, 3]
+result = isinstance(numbers, list)  # True
+
+number = 5
+result = isinstance(number, int)
+print(number,'instance of int?', result)  # True
+
+
+
 a = 1;
 b = 2;
 print(a + b)  # Three statements on one line
@@ -48,6 +71,12 @@ if X:
 else:
 	A = Z
 '''
+
+# Ternary Operators
+#condition_is_true if condition else condition_is_false
+is_fat = True
+state = "fat" if is_fat else "not fat"
+
 
 # NameError: name 'X2' is not defined  <<-- If variable is unassigned
 #X2 = ''  # retuns -> condition is false

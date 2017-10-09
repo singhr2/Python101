@@ -1,6 +1,9 @@
 # ArgumentPassing.py
 
 '''
+argument-matching tools
+ *var_args_tuple and **keywordArgsDict
+
 references are implemented as pointers, all arguments are, in effect, passed by pointer.
 Objects passed as arguments are never automatically copied.
 
@@ -334,6 +337,13 @@ f1(1, 2, 3, 4, 5, 6)
 
 #1 (2,) Hello {'fName': 'Ranbir', 'lname': 'singh'}
 f1(1, 2, c='Hello', **{'fName':'Ranbir', 'lname':'singh'})
+
+#SyntaxError: positional argument follows keyword argument
+#f1(101, 201, c='Hello', 301, **{'fName':'Ranbir', 'lname':'singh'})
+
+#101 (201, 301) Hello {'fName': 'Ranbir', 'lname': 'singh'}
+f1(101, 201, 301, c='Hello', **{'fName':'Ranbir', 'lname':'singh'})
+
 
 def f2(a, *b, c, **d): 
     print(a, b, c, d)
