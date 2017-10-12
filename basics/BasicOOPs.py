@@ -1,6 +1,15 @@
 #BasicOOPs.py
 
 '''
+Python blends support for multiple programming paradigms:
+procedural (with its basic statements), 
+object-oriented (with its classes), and
+functional - Python includes a set of built-ins used for functional programming—tools that apply functions to sequences and other iterables. 
+This set includes tools that call functions on an iterable’s items (map); filter out items based on a test function
+'''
+
+
+'''
 a = 3
 The above line results following steps: 
 1. Create an object to represent the value 3.
