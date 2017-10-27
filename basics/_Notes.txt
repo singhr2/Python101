@@ -1,4 +1,6 @@
-﻿pip, Python package manager.
+﻿Python supports the procedural, object-oriented, and function programming paradigms.
+
+pip, Python package manager.
 
 >> How to clear python interpreter console
 import os

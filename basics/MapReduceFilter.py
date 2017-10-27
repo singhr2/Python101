@@ -1,5 +1,7 @@
 # MapReduceFilter.py
 
+# map and filter are key members of Python’s early functional programming toolset
+
 # map() function
 #   => Mapping Functions over Iterables: map
 # Syntax : r = map(func, seq)
