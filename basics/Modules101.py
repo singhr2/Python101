@@ -90,7 +90,7 @@ print('__name__ for ModuleDummy is :', dummy.__dict__['__name__'])
 
 from ModuleDummy import a, _b, c, _d
 print(a)  
-print(b)  # NameError: name 'b' is not defined
+#print(b)  # NameError: name 'b' is not defined
 
 
 
@@ -107,3 +107,7 @@ Assignments in the file’s new code change the existing module object in place.
 # --------------------------------------
 # exec built-in function to run commands
 # --------------------------------------
+modname = 'string'
+ref1 = exec('import ' + modname) # Run a string of code
+print (type(ref1)) # <class 'NoneType'>
+print('name attribute of string returns :', string.__name__)
