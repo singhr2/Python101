@@ -6,6 +6,13 @@
 > first-class object model
   Function objects may be assigned to other names, passed to other functions, embedded in data structures, returned from one function to another, 
   and more, as if they were simple numbers or strings.
+
+> In Python functions, return (and yield) statements are optional
+  All functions return a value; if you don’t provide a return statement, 
+  your function returns the None object automatically
+
+  Functions such as this without a return are Python’s equivalent of what are called “procedures” in some languages
+
 '''
 
 #
