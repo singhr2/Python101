@@ -1,6 +1,11 @@
 https://github.com/singhr2/Python101
 
 ** Reference -> https://www.atlassian.com/git/tutorials/gitignore
+Ref: https://git-scm.com/blog
+
+ 
+#get changes from repository
+git pull
 
 git status
 
@@ -10,11 +15,27 @@ git add *.py
 git commit -m "added set example"
 git push
 
-git pull
 
 git gui
 
+# show commits
 gitk
+
+
+Undo a git add - remove files staged for a git commit
+$ git reset filename.txt
+
+To undo git add . use git reset (no dot).
+$ git reset 
+
+This will checkout the file from HEAD, overwriting your change.
+$ git checkout filename
+
+This command is also used to checkout branches, and you could happen to have a file with the same name as a branch. All is not lost, you will simply need to type:
+
+$ git checkout -- filename
+e.g., $ git checkout -- Class101.py
+
 
 
 If you are lazy and don't want to run vim to edit the file you can run the following command:
