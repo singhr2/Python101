@@ -1,4 +1,6 @@
 #Class102.py
+# Class Inheritance
+
 class Person:
     def __init__(self, name, job=None, pay=0):
         self.name = name
@@ -27,18 +29,25 @@ class Person:
 
 
 
-
-
-class Manager(Person): # Define Manager as subclass of Person
+class Manager(Person): # Define Manager extends(is a subclass of) Person
 	# customizing constructor
-    def __init__(self, name, pay): # Redefine constructor
-        Person.__init__(self, name, 'mgr', pay) # Run original with 'mgr'
+
+    '''
+    # Overloading constructor is not working
+    #
+    def __init__(self, name1): 
+        Person.__init__(self, name1, 'mgr', 111)
+    '''
+
+    def __init__(self, name1, pay1): # Redefine constructor
+        Person.__init__(self, name1, 'mgr', pay1) # Run original with 'mgr'
 
     # customizing one behavior in a subclass
     def giveRaise(self, percent, bonus=.25):
         #self.pay = int(self.pay * (2 + percent))
         Person.giveRaise( self, int(percent+bonus) )
     
+    # additional behavior for Manager
     def getSalesPercentage(self) :
     	return self.pay * .25
 
@@ -46,8 +55,11 @@ class Manager(Person): # Define Manager as subclass of Person
         return '[Manager: %s, %s]' %(self.name, self.job)
 
 
+# Subclass now has exactly the same behavior as Superclass
+class ManagerSubclass(Manager):
+    pass
 
-
+#  this runs only if we are running from within the module ?
 if __name__ == '__main__':
     bob = Person('Bob Smith')
     sue = Person('Sue Jones', job='dev', pay=100000)
@@ -59,21 +71,45 @@ if __name__ == '__main__':
         obj.giveRaise(.10) # Run this object's giveRaise
         print(obj) # Run the common __repr__
 
-    print(mgr1.getSalesPercentage())
+    # AttributeError: 'Person' object has no attribute 'getSalesPercentage'
+    #print(bob.getSalesPercentage())
 
-'''
-print(bob)
-print(sue)
-print(bob.lastName(), sue.lastName())
-sue.giveRaise(.10)
-print(sue)
+    print('mgr1.getSalesPercentage :' , mgr1.getSalesPercentage())
 
-print(mgr1)
-'''
+    thirdLevelObj = ManagerSubclass('RS', 786)
+    print('>>> ', thirdLevelObj.getSalesPercentage())  # >>>  196.5
+
 
 # method overloading
 mgr1.sayHello() # Hello !
 mgr1.sayHello('Demo User') # Hello  Demo User !
+
+
+print(mgr1.__class__) # <class '__main__.Manager'>
+print(Manager.__class__) #<class 'type'>
+
+print(mgr1.__dict__) # {'name': 'SomeName', 'job': 'mgr', 'pay': 876}
+print(Manager.__dict__) # {'__module__': '__main__', '__doc__': "\n    # Overloading constructor is not working\n    #\n    def __init__(self, name1): \n
+
+print(mgr1.__dict__.keys()) # dict_keys(['name', 'job', 'pay'])
+print(Manager.__dict__.keys()) # dict_keys(['__module__', '__doc__', '__init__', 'giveRaise', 'getSalesPercentage', '__repr__'])
+
+
+# AttributeError: 'Manager' object has no attribute '__bases__'
+#print(mgr1.__bases__)
+
+print(Manager.__bases__) # (<class '__main__.Person'>,)
+print(ManagerSubclass.__bases__) # (<class '__main__.Manager'>,)
+
+# !!!!!!!!!!!!!!!
+'''
+normal method call of this form:
+    instance.method(args...)
+is automatically translated by Python into this equivalent form:
+    class.method(instance, args...)
+where the class containing the method to be run is determined by the inheritance search rule applied to the method’s name.
+'''
+Manager.sayHello(mgr1, 'Called through class')  # Hello  Called through class !
 
 
 

@@ -3,7 +3,9 @@ https://github.com/singhr2/Python101
 ** Reference -> https://www.atlassian.com/git/tutorials/gitignore
 Ref: https://git-scm.com/blog
 
- 
+
+
+
 #get changes from repository
 git pull
 
@@ -11,30 +13,33 @@ git status
 
 git diff
 
+# (use "git add <file>..." to update what will be committed)
 git add *.py
 git commit -m "added set example"
 git push
 
-
+# Show changes, select files to stage, commit staged changes
 git gui
 
 # show commits
 gitk
 
 
-Undo a git add - remove files staged for a git commit
-$ git reset filename.txt
-
-To undo git add . use git reset (no dot).
-$ git reset 
-
+#(use "git checkout -- <file>..." to discard changes in working directory)
 This will checkout the file from HEAD, overwriting your change.
 $ git checkout filename
 
 This command is also used to checkout branches, and you could happen to have a file with the same name as a branch. All is not lost, you will simply need to type:
-
 $ git checkout -- filename
 e.g., $ git checkout -- Class101.py
+
+
+#Undo a git add - remove files staged for a git commit
+$ git reset filename.txt
+
+#To undo git add . use git reset (no dot).
+$ git reset 
+
 
 
 
@@ -57,30 +62,36 @@ Please move or remove them before you merge.
 => Deleted the file from directory
 
 
-
+~~~~~~~~~~~~~~~~~~~
 [Conflict Handling]
 ~~~~~~~~~~~~~~~~~~~
 Error reported:
-error: Pulling is not possible because you have unmerged files.
-hint: Fix them up in the work tree, and then use 'git add/rm <file>'
-hint: as appropriate to mark resolution and make a commit.
-fatal: Exiting because of an unresolved conflict.
+	error: Pulling is not possible because you have unmerged files.
+	hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+	hint: as appropriate to mark resolution and make a commit.
+	fatal: Exiting because of an unresolved conflict.
 
 
-Solution reference: http://genomewiki.ucsc.edu/index.php/Resolving_merge_conflicts_in_Git
+	Solution reference: http://genomewiki.ucsc.edu/index.php/Resolving_merge_conflicts_in_Git
 
-How do I find conflicts within the file itself?
-Conflicts are marked in a file with clear line breaks:
- <<<<<<< HEAD:mergetest
- This is my third line
- =======
- This is a fourth line I am adding
- >>>>>>> 4e2b407f501b68f8588aa645acafffa0224b9b78:mergetest
-<<<<<<<: Indicates the start of the lines that had a merge conflict. The first set of lines are the lines from the file that you were trying to merge the changes into.
-=======: Indicates the break point used for comparison. Breaks up changes that user has committed (above) to changes coming from merge (below) to visually see the differences.
->>>>>>>: Indicates the end of the lines that had a merge conflict.
-How do I resolve a merge conflict in a file?
-You resolve a conflict by editing the file to manually merge the parts of the file that git had trouble merging. This may mean discarding either your changes or someone else's or doing a mix of the two. You will also need to delete the '<<<<<<<', '=======', and '>>>>>>>' in the file.
-What do I do after I've resolved conflicts in all affected files?
-git add the file(s), git commit and git push (Push only for branches tracked.)
-(Note added by Chin - need to commit everything, not just the resolved conflict file.)
+Q. How do I find conflicts within the file itself?
+
+A. 
+	Conflicts are marked in a file with clear line breaks:
+
+	 <<<<<<< HEAD:mergetest
+	 This is my third line
+	 =======
+	 This is a fourth line I am adding
+	 >>>>>>> 4e2b407f501b68f8588aa645acafffa0224b9b78:mergetest
+
+	Note: 
+	<<<<<<<: Indicates the start of the lines that had a merge conflict. 
+	The first set of lines are the lines from the file that you were trying to merge the changes into.
+	=======: Indicates the break point used for comparison. Breaks up changes that user has committed (above) to changes coming from merge (below) to visually see the differences.
+	>>>>>>>: Indicates the end of the lines that had a merge conflict.
+	How do I resolve a merge conflict in a file?
+	You resolve a conflict by editing the file to manually merge the parts of the file that git had trouble merging. This may mean discarding either your changes or someone else's or doing a mix of the two. You will also need to delete the '<<<<<<<', '=======', and '>>>>>>>' in the file.
+	What do I do after I've resolved conflicts in all affected files?
+	git add the file(s), git commit and git push (Push only for branches tracked.)
+	(Note added by Chin - need to commit everything, not just the resolved conflict file.)
