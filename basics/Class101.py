@@ -2,6 +2,7 @@
 
 '''
 classes are essentially factories for generating multiple instances
+classes are mostly just namespaces—that is, tools for defining names (i.e., attributes) that export data and logic to clients.
 
 A class consists of two parts: the header and the body. 
 
@@ -21,6 +22,24 @@ The new instance is passed in to the self argument of __init__ as usual
 If no __init__ is present, class calls return an empty instance, without initializing it.
 '''
 
+####
+# class vs module
+###
+'''
+• Modules
+— Implement data/logic packages
+— Are created with Python files or other-language extensions
+— Are used by being imported
+— Form the top-level in Python program structure
+
+• Classes
+— Implement new full-featured objects
+— Are created with class statements
+— Are used by being called
+— Always live within a module
+'''
+
+
 '''
 # a class that does nothing and have no attribute
 
@@ -28,11 +47,20 @@ class DerivedClassName(BaseClassName):
     pass
 '''
 
+'''
+statement’s general form:
+
+    class name(superclass,...): # Assign to name
+        attr = value            # Shared class data
+        def method(self,...):   # Methods
+            self.attr = value   # Per-instance data
+'''
+
 def convertToUppercase(someObj):
 	return someObj.name.upper()
 
-class Person:
 
+class Person:
     def __init__(self, first, last): # class header
         self.firstname = first # members / attributes
         self.lastname = last
@@ -43,13 +71,17 @@ class Person:
 
 # class Employee extends Person
 class Employee(Person):
-
-
 	# If no __init__ is present, class calls return an empty instance, without initializing it.
     def __init__(self, first, last, staffnum): # constructor
+        
+        # Calling Superclass Constructors
+
+        # option-1
         Person.__init__(self,first, last) 
-        # it can also be coded as -> 
+        
+        # option-2
         #super().__init__(first, last) 
+
 
         self.staffnumber = staffnum
 

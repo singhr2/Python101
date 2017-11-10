@@ -1,6 +1,8 @@
 ﻿
 https://github.com/singhr2/Python101
 
+https://pymotw.com/3/
+
 http://python-3-patterns-idioms-test.readthedocs.io/en/latest/index.html
 https://docs.quantifiedcode.com/python-anti-patterns/index.html
 
