@@ -1,6 +1,13 @@
 #Class102.py
 # Class Inheritance
 
+'''
+Polymorphism
+* In X.method, the meaning of method depends on the type (class) of subject object X.
+* Polymorphism in Python is based on object interfaces, not types (ie overloading functions).
+* write your code to expect only an object interface, not a specific data type.
+'''
+
 class Person:
     def __init__(self, name, job=None, pay=0):
         self.name = name

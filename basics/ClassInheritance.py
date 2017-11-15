@@ -64,7 +64,8 @@ print('\n--------')
 obj2 = Super1('YourName')
 obj2.printMe()
 
-
+# print subclasses 
+print('Subclasses of Super1 :', Super1.__subclasses__())
 
 # -----------------------------------------
 # Class Interface Techniques
