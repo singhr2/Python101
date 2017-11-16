@@ -9,7 +9,7 @@ class ClassWithOverloadFunctions:
         print('called method with one arg:', pS11)
 
     def methodWith3Params(self, p31, p32, p33) :
-        print('called method with one arg:', p31, p32, p33)
+        print('called method with 3 arg:', p31, p32, p33)
     
     def defaultFunction(self):
         print('no method found to hadle ')
