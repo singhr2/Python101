@@ -21,15 +21,28 @@
 class A(object):  # class named 'A'
 
     def f1(self): 
-        print('inside function f1')
+        # Through the self parameter, instance methods can freely access attributes and other methods on the same object.
+        print('<A> self.__class__ :', self.__class__) # prints -> <A> self.__class__ : <class '__main__.A'>
+        print('inside instance function f1')
         pass
 
     def f2(): 
         print('inside function f2')
         pass
 
+    #Because the class method only has access to this cls argument, it can’t modify object instance state. 
+    #That would require access to self. 
+    #However, class methods can still modify class state that applies across all instances of the class.
+    @classmethod
+    def classmethod(cls):
+        print('class method called', cls)
+
     # The decorator tells the built-in default metaclass type (the class of a class) 
     # to not create bound methods for method_three.
+    # 
+    # This type of method takes neither a self nor a cls parameter (but of course it’s free to accept an arbitrary number of other parameters).
+    # Therefore a static method can neither modify object state nor class state. 
+    # Static methods are restricted in what data they can access – and they’re primarily a way to namespace your methods.
     @staticmethod
     def method_three():
         print("Called method_three")
@@ -74,3 +87,13 @@ y(obj1) # inside function f1
 
 A().method_three() # Called method_three
 A.method_three() # Called method_three
+
+
+# TESTING CLASS METHODS
+
+m1= A.classmethod
+print(m1) # <bound method A.classmethod of <class '__main__.A'>>
+m1() # class method called <class '__main__.A'>
+
+A().classmethod() # class method called <class '__main__.A'>
+

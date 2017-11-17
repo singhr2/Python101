@@ -62,6 +62,9 @@ def convertToUppercase(someObj):
 
 class Person:
     def __init__(self, first, last): # class header
+
+        # *** The attributes of objects are stored in a dictionary "__dict__"
+
         self.firstname = first # members / attributes
         self.lastname = last
 

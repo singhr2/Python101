@@ -24,9 +24,9 @@ class CoolStuffSuper(object):
         print('>>> CoolStuffSuper.__del__')
 
         # What is del for ?
-        del self.x
-        del self.y
-        del self.range
+        #del self.x
+        #del self.y
+        #del self.range
 
     # Some method.
     def greet(self):

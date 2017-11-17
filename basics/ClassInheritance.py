@@ -6,6 +6,11 @@ methods work in exactly the same way as simple functions,
 with one crucial exception: a method’s first argument always receives the instance object that is the implied subject of the method call.
 
 Python automatically maps instance method calls to a class’s method functions as follows. 
+
+** In Python 3.X, all classes are automatically what were formerly called “new style,”
+whether they explicitly inherit from object or not. Coding the object superclass is optional and implied.
+
+****
 Method calls made through an instance, like this:
 	instance.method(args...)
 are automatically translated to class method function calls of this form:
