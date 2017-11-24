@@ -4,6 +4,12 @@
 classes are essentially factories for generating multiple instances
 classes are mostly just namespaces—that is, tools for defining names (i.e., attributes) that export data and logic to clients.
 
+<!> everything in Python (Yes! Even classes), are objects.
+
+<!> Functions and methods are called callable as they can be called.
+In fact, any object which implements the special method __call__() is termed callable. 
+So, in the most basic sense, a decorator is a callable that returns a callable.
+
 A class consists of two parts: the header and the body. 
 
 Like everything else, class names always live within a module

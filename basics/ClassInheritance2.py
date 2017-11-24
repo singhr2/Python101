@@ -17,8 +17,9 @@ Diamond problem
 
 (b) For new-style classes (optional in 2.X and automatic in 3.X): MRO
 "Method Resolution Order" ( MRO)
-	this search proceeds across by levels before moving up. 
-	This search order is called the new-style MRO for “method resolution order” 
+  * it’s the path Python follows for inheritance in new-style classes
+	* this search proceeds across by levels before moving up. 
+	* This search order is called the new-style MRO for “method resolution order” 
 	(and often just MRO for short when used in contrast with the DFLR order).
 
 	the MRO essentially works like this:
@@ -62,6 +63,18 @@ x=D()
 print(">>> ")
 x.meth() # A.meth
 
+# AttributeError: 'D' object has no attribute '__bases__'
+#print('x.__bases__ :', x.__bases__)
+
+# Output: D.__bases__ : (<class '__main__.B'>, <class '__main__.C'>)
+print('D.__bases__ :', D.__bases__)
+
+#----------------------------------------------------
+# Change the base class
+#----------------------------------------------------
+# output: D.__bases__(2) : (<class '__main__.A'>,)
+D.__bases__ = (A,)
+print('D.__bases__(2) :', D.__bases__)
 
 # print mro
-print(D.__mro__)
+print('D.__mro__ :', D.__mro__)

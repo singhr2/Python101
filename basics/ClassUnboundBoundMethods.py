@@ -3,7 +3,7 @@
 '''
 * A function is created by the def statement, or by lambda.
 
->>> Unbound (class) method objects: no self
+>>> Unbound (class) method objects: no 'self'
 * An unbound method is a simple function that can be called without an object context. 
 
 >>> Bound (instance) method objects: self + function pairs
