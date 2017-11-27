@@ -51,6 +51,26 @@ class CoolStuffSuper(object):
     #        object.__setattr__(self, name, value)
 
 
+    '''
+     where is the code that is actually being called when the variable goes out of scope? 
+     The short answer is, "wherever the context manager is defined." 
+     You see, there are a number of ways to create a context manager. 
+     The simplest is to define a class that contains two special methods: __enter__() and __exit__(). 
+     __enter__() returns the resource to be managed (like a file object in the case of open()). __exit__() does any cleanup work and returns nothing.
+    '''
+    #
+    # __enter__ and __exit__ are used with 'with' clause
+    # Using these magic methods (__enter__, __exit__) allows you to implement objects which can be used easily with the with statement.
+    # The idea is that it makes it easy to build code which needs some 'cleandown' code executed (think of it as a try-finally block).
+    #
+    def __enter__(self):
+        print('!!! Inside __enter__ method')
+        #self.cr.save()
+        #return self.cr
+    def __exit__(self, type, value, traceback):
+        print('!!! Inside __enter__ method')
+        #self.cr.restore()
+
 class CoolStuffSub(CoolStuffSuper):
 
     def __init__(self):
