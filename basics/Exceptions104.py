@@ -2,13 +2,16 @@
 
 
 #
-#
+# Context Management Protocol
 # example : with/as statement
 #
 # SYNTAX: 
 #     with expression [as variable]:
 #          with-block
 #
+# the with/as statement is designed to be an alternative to a common try/finally usage idiom; 
+# like that statement, with is in large part intended for specifying
+# termination-time or “cleanup” activities that
 
 
 '''
@@ -57,17 +60,46 @@ finally:
 At the very least a context manager has an __enter__ and __exit__ methods defined. 
 '''
 
-
+# object known as a context manager that must have __enter__ and __exit__ methods
 class MyFile(object):
     def __init__(self, file_name, method):
+        print('inside __init__')
         self.file_obj = open(file_name, method)
     def __enter__(self):
+        print('inside __enter__')
         return self.file_obj
     def __exit__(self, type, value, traceback):
+        print('inside __exit__')
         self.file_obj.close()
 
 with MyFile('SampleTextFile.txt', 'r') as opened_file:
     lines = opened_file.readlines()
 
 # print using list comprehension
-[print(x) for x in lines]
+[print('>>', x) for x in lines]
+
+
+'''
+Output ->
+	inside __init__
+	inside __enter__
+	inside __exit__
+	Hi there!	<-- File contents
+
+	Bye Bye!!
+'''
+
+
+#
+# with statement may also specify multiple (sometimes referred to as “nested”) context managers with new comma syntax.
+#
+'''
+with A() as a, B() as b:
+    ...statements...
+
+is equivalent to the following, which also works in 3.0 and 2.6:
+with A() as a:
+    with B() as b:
+        ...statements...
+'''
+

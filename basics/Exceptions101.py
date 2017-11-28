@@ -150,3 +150,18 @@ else:
 if text:
     print(text[100])
 
+
+
+
+print('\n(7)---------------------------------')
+print('Custom exception with custom message ')
+
+class MyCustomException2 (Exception):
+    def __str__(self):
+        return 'This is returned from __st__ of MyCustomException2'
+
+try:
+    print('about to raise MyCustomException2')
+    raise MyCustomException2()
+except MyCustomException2 as mce:
+    print (mce)
